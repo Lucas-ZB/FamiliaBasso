@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tea House - Tea Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .bodycontainer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            text-align: justify;
+
+        }
+        
+        blockquote {
+            border-left: 4px solid #007bff;
+            margin: 0;
+            padding-left: 15px;
+            color: #777;
+        }
+
+        .source {
+            font-style: italic;
+        }
+
+        figure {
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            text-align: center;
+            font-style: italic;
+            margin-top: 10px; /* Espaço entre a imagem e a legenda */
+        }
+
+        .justified-text {
+            text-align: justify;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    
+<!-- Navbar Start -->
+<div class="container-fluid bg-white sticky-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-2">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <div class="d-flex align-items-center">
+                        <div class="mr-3"><img class="img-fluid smaller-image" src="img/2060627.png" alt="Imagem Esquerda">
+                    </div>
+                    <img class="img-fluid smaller-image ms-2" src="img/Brasão-da-família-Basso.jpg" alt="Logo"> 
+                    <span class="logo-text ms-2 text-justify">Família Basso</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: rgb(184, 10, 10);">História</a>
+                            <div class="dropdown-menu bg-light rounded-0 m-0">
+                                <a href="Historia_do_Sobrenome.html" class="dropdown-item">História da Família</a>
+                                        <a href="Historia_de_Encantado.html" class="dropdown-item">História de Encantado</a>
+                                        <a href="Historia_de_Linha_Salvacao.html" class="dropdown-item">História de Linha Salvação</a>
+                                        <a href="Historia_da_Familia.html" class="dropdown-item">Hisória do Sobrenome</a>
+                                <a href="Historia_da_Emigracao.html" class="dropdown-item">Hisória da Emigração na Europa e Itália</a>
+                            </div>
+                        </div>
+                        <a href="Documentos.html" class="nav-item nav-link ">Documentos</a>
+                        <a href="Musicas.html" class="nav-item nav-link ">Músicas</a>
+                        <a href="store.html" class="nav-item nav-link">Encontros</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Depoimentos</a>
+                            <div class="dropdown-menu bg-light rounded-0 m-0">
+                                <a href="depoimento_Maria_Basso_Golin.html" class="dropdown-item">Depoimento de Maria Basso G.</a>
+                                <a href="depoimento_Marco_Basso.html" class="dropdown-item">Depoimento de Marco Basso</a>
+                                <a href="depoimento_Thereza_Basso_Soares copy.html" class="dropdown-item">Depoimento de Thereza Basso S.</a>
+                                <a href="depoimento_João_Basso.html" class="dropdown-item">Relato de Vida de João Basso</a>
+                                
+                            </div>
+                            
+                        </div> 
+                        <a href="Contato.html" class="nav-item nav-link">Contato</a>
+                    </div>
+                    <button type="button" class="btn btn-sm p-0 ms-4"><i class="fa fa-search"></i></button>
+                    <div class="d-flex align-items-center">
+                    <div class="mr-3"><img class="img-fluid smaller-image" src="img/bandeira-do-brasil.png" alt="Imagem Direita">
+                </div>
+            </div>
+            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <!-- Rest of the navigation links inside the collapse element -->
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="background-image: url('img/desenho-navio-antigo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="container text-center py-5">
+        <h1 class="display-2 text-dark mb-4 animated slideInDown">História da Emigração</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Páginas</a></li>
+                <li class="breadcrumb-item text-dark" aria-current="page">História da Emigração</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+    <!-- História da Emigração -->
+
+    <div class="container py-5" style="text-align: justify;">   
+        <h1 style="text-align: center;">A IMIGRAÇÃO NA EUROPA E ITÁLIA.</h1>
+
+ O século XIX (1800 a 1899) foi marcado por uma intensa explosão demográfica na Europa. O alto crescimento da população, ao lado do acelerado processo de industrialização, afetou diretamente as oportunidades de emprego naquele continente. Estima-se que, entre 1870 e 1970, em torno de 28 milhões de italianos emigraram (aproximadamente a metade da população da Itália). Entre os destinos principais estavam diversos países da Europa, América do Norte e América do Sul.
+Não apenas a população da Itália, mas de toda a Europa de um modo geral estava afundada na miséria no século XIX. A transição entre um modelo de produção feudal para um sistema capitalista afetou diretamente as condições sociais no continente europeu. As terras ficaram concentradas nas mãos de poucos proprietários, havia altas taxas de impostos sobre a propriedade, fazendo o pequeno proprietário se endividar com empréstimos. Havia a concorrência desigual com as grandes propriedades rurais, que fazia o preço dos produtos do pequeno proprietário ficarem muito baixos, empurrando essa mão de obra para as indústrias nascentes, que não conseguiam absorver essa massa de trabalhadores, saturando as cidades com desempregados. À medida que a disputa pelos mercados consumidores se acirrou, a concentração de terras nas mãos de poucos se agravou. Assim, milhões de camponeses, que antes eram pequenos proprietários rurais, desceram à condição de trabalhadores braçais (bracciante) nas grandes propriedades rurais. Mesmo aqueles que continuaram na condição de pequenos proprietários não conseguiam mais tirar seu sustento da terra. Isto porque as terras eram normalmente adquiridas por herança, e o filho mais velho adquiria a propriedade após a morte do pai, enquanto os outros filhos eram excluídos. Mesmo quando as terras eram divididas entre os filhos, o fracionamento acarretava o recebimento de um pedaço de terra muito pequeno, tornando impossível dali extrair o sustento.
+&
+No caso específico da Itália, depois de um longo período de mais de 20 anos de lutas(1850 – 1870)  para a unificação do país, sua população, particularmente a rural e mais pobre, tinha dificuldade de sobreviver quer nas pequenas propriedades que possuía ou onde simplesmente trabalhava, quer nas cidades, para onde se deslocava em busca de trabalho.
+Nessas condições, portanto, a emigração era não só estimulada pelo governo, como era, também, uma solução de sobrevivência para as famílias. Assim, é possível entender a saída de cerca de 7 milhões de italianos no período compreendido entre 1860 e 1930.
+
+
+
+O Fascismo na Itália e o Governo Mussolini
+
+
+A era Mussolini, na Itália começou em 1922. Mussolini, cujo nome completo era Benito Amilcre Andrea Mussolini, viveu de 1883 a 1945. Foi o líder máximo (o dulce) da Itália durante o período de 1922 a 1943 – quando foi preso por tropas aliadas durante a Segunda Guerra. Foi ele também quem criou o movimento fascista, que deu origem ao Partido Nacional Fascista, no fim da década de 1910. Mussolini foi o primeiro ideólogo totalitário da Europa a chegar ao poder máximo de uma nação da Europa Ocidental.
+O exercício do poder político, para Mussolini, deveria estender-se para todos os âmbitos da vida dos indivíduos, que deveriam estar ajustados à vontade do Dulce , isto é, dele próprio, como líder capaz de conduzir a todos rumo ao “triunfo da Itália”, enquanto nação e império. A aspiração ao controle total da vida dos cidadãos pelo Estado inspirou vários outros líderes políticos da época. 
+<br>
+<br>
+
+<h3 style="text-align: center;">A IMIGRAÇÃO ITALIANA NO BRASIL</h3>
+
+A imigração italiana no Brasil foi intensa, tendo como ápice o período entre os anos de 1880 e 1930. A maior parte dela se concentrou no estado de São Paulo e os estados da região Sul.  Os italianos começaram a imigrar em número significativo para o Brasil a partir da década de 1870. Foram impulsionados pelas transformações socioeconômicas em curso no Norte da península itálica, que afetaram sobretudo a propriedade da terra. Um aspecto peculiar à imigração em massa italiana é que ela começou a ocorrer pouco após a unificação da Itália (1861), razão pela qual uma identidade nacional desses imigrantes se forjou, em grande medida, no Brasil.
+Os ítalo-brasileiros são considerados a maior população de oriundi (descendentes de italianos) fora da Itália. Eles mantêm os costumes tradicionais italianos, assim como parte da população brasileira, que acabou por absorvê-los por causa do impacto da imigração italiana no Brasil. A contribuição dos italianos é notável em todos os setores da sociedade brasileira, principalmente na mudança socioeconômica que os italianos produziram no campo e nas cidades. Podemos citar desde o modo de vida que mudou profundamente influenciado pelo catolicismo, bem como nas artes, música, arquitetura, alimentação e no empreender italiano na abertura de empresas, e como trabalhadores especializados. No campo, podemos citar a introdução de novas técnicas agrícolas, e principalmente na mudança do latifúndio para pequenas propriedades agrícolas e na introdução da policultura de produtos.
+
+&
+
+Desde o ano de 2010, a Marinha do Brasil (MB) e a Universidade do Estado do Rio de Janeiro (UERJ) mantêm um convênio de cooperação que visa preservar a memória da imigração no Brasil, particularmente da Hospedaria de Imigrantes da Ilha das Flores, que funcionou entre 1883 e 1966, sendo a primeira hospedaria de imigrantes criada pelo governo brasileiro, ainda no período imperial, e que chegou a receber a ilustre visita de Dom Pedro II.
+
+<br>
+<br>
+<h3 style="text-align: center;"> A IMIGRAÇÃO ITALIANA NO RIO GRANDE DO SUL</h3>
+                                                                                 
+No dia 20/05/2020, comemorou-se no Brasil, nessa data 145 anos da imigração italiana no RS, pois foi em 20 de maio de 1875 que os primeiros imigrantes italianos, chegaram à serra gaúcha, se estabelecendo em Nova Milano, hoje área do Município de Farroupilha.
+
+&
+
+O fato foi consequência de ações do Governo Imperial, para buscar imigrantes, fora dos portugueses e espanhóis, bem como dos escravos africanos. Pois a partir de 1800, que foram acolhidos milhares de imigrantes. A opção maior foi para moradores de países que não tinham colônias em outros locais do mundo, se destacando a Alemanha, a Suíça, a Polônia e a Itália. 
+
+O fomento imigracionista surgia não apenas como solução para resolver a suposta escassez de mão de obra na agricultura, ocupar os grandes espaços vazios, mas também para proporcionar o branqueamento da população brasileira com a entrada maciça de brancos europeus no país.
+Os italianos, de forma geral, influenciaram muito na agricultura, na industrialização, na alimentação, na arquitetura, na cultura e até em outros setores da comunidade brasileira, onde se integraram de forma decisiva. 
+E o Rio Grande do Sul acolheu em torno de cem mil italianos. A semente era boa, encontrou a terra fértil e forjou nos seus descendentes a fé, o amor ao trabalho e a esperança de dias melhores.
+Os imigrantes italianos que se destinavam às Colônias do Rio Grande do Sul (Dona Isabel – Bento Gonçalves, Conde D’Eu – Garibaldi e Nova Palmira – Caxias do Sul) desciam no Porto do Rio de Janeiro e, em seguida, embarcavam em navios de cabotagem para a continuação da viagem. Aqueles destinados as duas primeiras colônias desembarcavam no Porto de São João do Montenegro; aqueles destinados à terceira colônia desembarcavam no Porto de São Sebastião do Caí.
+
+&
+
+A família de MARCO BASSO no Brasil e RS
+
+Foi neste contexto socioeconômico e político da Europa e do Brasil que a família de Marco Basso saiu da Itália no dia 31/05/1924 (datas apostas nos passaportes) e desembarcou no Brasil dia 16/06/1924, no Porto do Rio de Janeiro, na Ilha das Flores, hoje município de São Gonçalo. Após ficarem hospedados na Hospedaria dos Imigrantes Ilha das Flores, hoje museu, embarcaram num navio de cabotagem passaram também pelo Santos para embarque de outros imigrantes e foram até o Porto de Montenegro – RS, (foto 4).  
+
+Do porto de Montenegro partiram para o interior de Garibaldi, a pé e em lombo de mulas, onde eram transportados os pertences e as crianças pequenas conforme vemos na (foto 5). Em Coronel Pilar residiram por quase dois anos, e após rumaram para tão sonhado pedaço de terra comprado no Brasil em Linha Salvação, interior de Encantado, hoje a localidade pertence ao município de Relvado.
+
+&
+
+5. Transporte de pertences e crianças no lombo dos animais.	
+	A viagem da família de Marco Basso na Itália e no Brasil está descrita no capítulo relato de vida de Marco Basso deste site.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Monumentos aos imigrantes no mundo e no Brasil.
+
+&
+
+Espalhados pelo mundo e pelo Brasil temos muitos monumentos em homenagem aos imigrantes de todas as etnias. Destacamos o monumento ao imigrante italiano em Asiago, província de Vicenza Itália, monumento ao imigrante de todas as etnias em Caxias do Sul -RS e o painel em acrílico, em frente à igreja matriz da cidade de Encantado, Brasil.  
+
+&
+
+O Monumento Nacional ao Imigrante é uma bela homenagem da Nação Brasileira a todos os imigrantes, de todas as etnias que contribuíram para a povoação e progresso do Brasil, fica em Caxias do Sul, no Brasil, localizado na entrada da cidade, na BR-116, km 150. 
+	O monumento é constituído por um grande grupo escultórico em bronze representando um casal de agricultores, com uma criança nos braços da mulher. Às suas costas ergue-se um obelisco com três imagens alegóricas em baixo-relevo, ilustrando a posse da terra, o cultivo da terra, e a aliança entre as forças civis e militares sob a proteção divina, além da data 1875, da fundação da cidade. 
+
+
+&
+
+Essa obra foi realizada em 1971 para a comemoração do centenário da imigração italiana em Encantado. Os artistas Hildo Müller, Eligio Pozza e Manuel Varela representaram em retalhos de cerâmica a chegada dos Imigrantes, e o seu trabalho em prol do desenvolvimento do município. 
+Em 1982 foi colocada a inscrição ENCANTADO AO IMIGRANTE.
+</div>
+
+    
+     
+    <!-- Sobre o Nome e a História de Encantado -->
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6"> <!-- Alterei de col-lg-3 para col-lg-4 -->
+                <h4 class="text-primary mb-4">Onde Estamos</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Porto Alegre, RS - Brasil</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>lzb1093@outlook.com</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>sergiobasso1924@gmail.com</p>
+                <div class="d-flex pt-3">
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.instagram.com/lucas.zanettebasso/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/lucas.zanettebasso" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.linkedin.com/in/lucas-zanette-basso-756395b9/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6"> <!-- Alterei de col-lg-3 para col-lg-4 -->
+                <h4 class="text-primary mb-4">Colaboradores</h4>
+                <a class="btn btn-link" href="https://consportoalegre.esteri.it/pt/" target="_blank">Consulado Italiano</a>
+                <a class="btn btn-link" href="https://www.angelozanatta.com.br/" target="_blank">Família Zanatta</a>
+            </div>
+            <div class="col-lg-4 col-md-6"> <!-- Alterei de col-lg-3 para col-lg-4 -->
+                <h4 class="text-primary mb-4">Links Parceiros</h4>
+                <a class="btn btn-link" href="https://www.somospet2pet.com.br/dogminas" target="_blank">Dog Minas</a>
+                <a class="btn btn-link" href="https://www.centrooestepet.com.br/" target="_blank">Centro Oeste Pet</a>
+                <a class="btn btn-link" href="https://www.instagram.com/agro_sao_jorge_udia/" target="_blank">Agro São Jorge</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="fw-medium" href="#">Família Basso</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    Desenvolvido por <a class="fw-medium" href="https://htmlcodex.com">Lucas Zanette Basso</a> Distributed By <a class="fw-medium" href="https://themewagon.com">ThemeWagon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

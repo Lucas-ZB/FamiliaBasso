@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tea House - Tea Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .bodycontainer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            text-align: justify;
+
+        }
+        
+        blockquote {
+            border-left: 4px solid #007bff;
+            margin: 0;
+            padding-left: 15px;
+            color: #777;
+        }
+
+        .source {
+            font-style: italic;
+        }
+
+        figure {
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            text-align: center;
+            font-style: italic;
+            margin-top: 10px; /* Espaço entre a imagem e a legenda */
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    
+<!-- Navbar Start -->
+<div class="container-fluid bg-white sticky-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-2">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <div class="d-flex align-items-center">
+                        <div class="mr-3"><img class="img-fluid smaller-image" src="img/2060627.png" alt="Imagem Esquerda">
+                    </div>
+                    <img class="img-fluid smaller-image ms-2" src="img/Brasão-da-família-Basso.jpg" alt="Logo"> 
+                    <span class="logo-text ms-2 text-justify">Família Basso</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >História</a>
+                            <div class="dropdown-menu bg-light rounded-0 m-0">
+                                <a href="Historia_do_Sobrenome.html" class="dropdown-item">História da Família</a>
+                                        <a href="Historia_de_Encantado.html" class="dropdown-item">História de Encantado</a>
+                                        <a href="Historia_de_Linha_Salvacao.html" class="dropdown-item">História de Linha Salvação</a>
+                                        <a href="Historia_da_Familia.html" class="dropdown-item">Hisória do Sobrenome</a>
+                                <a href="Historia_da_Emigracao.html" class="dropdown-item">Hisória da Emigração na Europa e Itália</a>
+                            </div>
+                        </div>
+                        <a href="Documentos.html" class="nav-item nav-link ">Documentos</a>
+                        <a href="Musicas.html" class="nav-item nav-link ">Músicas</a>
+                        <a href="store.html" class="nav-item nav-link">Encontros</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Depoimentos</a>
+                            <div class="dropdown-menu bg-light rounded-0 m-0">
+                                <a href="depoimento_Maria_Basso_Golin.html" class="dropdown-item">Depoimento de Maria Basso G.</a>
+                                <a href="depoimento_Marco_Basso.html" class="dropdown-item">Depoimento de Marco Basso</a>
+                                <a href="depoimento_Thereza_Basso_Soares.html" class="dropdown-item">Depoimento de Thereza Basso S.</a>
+                                <a href="depoimento_João_Basso.html" class="dropdown-item">Relato de Vida de João Basso</a>
+                                <a href="depoimento_Silvio.html" class="dropdown-item">Relato de Vida de Silvestrio Basso</a>
+                                <a href="depoimento_Pedro_Basso.html" class="dropdown-item">Relato de Vida de Pedro Basso</a>
+                                <a href="depoimento_Luiz_Basso.html" class="dropdown-item">Relato de Vida de Luiz Basso</a>
+
+                                
+                            </div>
+                            
+                        </div> 
+                        <a href="Contato.html" class="nav-item nav-link">Contato</a>
+                    </div>
+                    <button type="button" class="btn btn-sm p-0 ms-4"><i class="fa fa-search"></i></button>
+                    <div class="d-flex align-items-center">
+                    <div class="mr-3"><img class="img-fluid smaller-image" src="img/bandeira-do-brasil.png" alt="Imagem Direita">
+                </div>
+            </div>
+            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <!-- Rest of the navigation links inside the collapse element -->
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->
+ 
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-2 text-dark mb-4 animated slideInDown">Depoimentos</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Páginas</a></li>
+                    <li class="breadcrumb-item text-dark" aria-current="page">Depoimentos</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Sobre o Nome e a História de Encantado -->
+
+<div class="bodycontainer">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <!-- Título -->
+                <h2>A Trajetória e Descendência de Pedro Basso</h2>
+    
+                <!-- Imagem -->
+                <img src="img\Documentos para o site\Fotos das familias Basso\Fotos Familia Pedro Basso\Fotos Familia Pedro Basso\Casal Margarida e Pedro Basso.jpg" alt="Imagem de Sílvio Basso" class="img-fluid mb-3">
+    
+                <!-- Parágrafo -->
+                <p class="lead text-justify">
+
+                    Pedro Basso nasceu em 13 de maio de 1933, também dia de Nossa Senhora de Fátima. O nono filho de Marco Basso e o segundo filho com a segunda esposa Maria Pedrazzani, na localidade de Linha Salvação, hoje município de Relvado, na época distrito de Encantado.
+	Passou a infância e juventude com os pais trabalhando na lavoura e estudou até a 5ª série na escola da comunidade. Seu sonho era poder estudar e ser professor. Foi servir o Exército no ano de 1951 no quartel do regimento da cidade de Cruz Alta, no Rio Grande do Sul. 
+Casou-se com Margarida Zanatta, no dia 02 de março de 1957 e foram morar na casa velha do avô Marco em linha Salvação. 
+Após um ano compraram uma área de terra próxima à família de João Perazzolli, na mesma comunidade, no caminho e próximo à localidade de São Rafael. Lá residiram por 04 anos, onde o Sr. Pedro começou a criar porcos para vender.
+No ano de 1962 seu Pedro foi ver terras para comprar no município de Coronel Freitas, em Santa Cataria onde já morava seu irmão Serafino Antônio, porém não consegui fechar negócio na ocasião.
+ 	Tendo em vista que a terra era pouca, compraram uma área maior do Senhor Genuíno Scapini, próximo à casa do tio Luís Basso. Nesse local havia um capitel dedicado a Santa Lúcia. Próximo ao capitel foi construído a Escola Municipal que começou a funcionar em 
+    1964, onde os filhos à medida que cresciam iam estudar nesta escola.
+Posteriormente com o fechamento do posto de venda, o Sr. Pedro se associou a Cooperativa dos suinicultores de Encantado Ltda (COSUEL) que ficava na sede do munícipio de Encantado. (Atualmente a Cooperativa detém a marca Dália Alimentos, exporta par vários países e é a 
+empresa que mais tem empregados no município de Encantado.) Quase tudo que era produzido na sua propriedade era comercializado com esta Cooperativa.
+ Na propriedade de 12 hectares, podiam-se lavrar quatro hectares com trator de um vizinho (pagava-se as horas trabalhadas com trator), o resto da terra era lavrado com um arado, puxado por uma junta de bois. A propriedade tinha vacas de leite, uma junta de bois, bezerros, cavalo, 
+ galinhas e criação de porcos (pelo vermelho chamado de “duroc” e “landrace” com pelo branco – tipo exportação)
+ 
+ <figure>
+    <img src="img\Casa-Relvado.jpg" alt="Imagem da casa de relvado" class="img-fluid mb-3">
+    <figcaption>Imagem da Casa de Relvado.
+    </figure>
+
+    <p>Na comunidade de linha Salvação o Sr. Pedro Basso foi da diretoria da Igreja, presidia o terço aos domingos, ajudava o padre na missa e depois se tornou Líder Cristão de Comunidade e ajudava nos cantos da Igreja. Ele também gostava muito de cantar as músicas “Cidade Maravilhosa”, “Oh! Minas Gerais” e “Chero chero Bin, Velha Cebola” no dialeto italiano. Quando nasceram os netos passou a cantar para eles. Quis o destino que o Sr. Pedro Basso e uma parte de família fossem morar em Minas Gerais anos mais tarde. As letras das músicas estão aba “músicas do Folclore Italiano”.</p>
+    
+    <figure>
+        <img src="img\linha_salvacao.png" alt="Imagem da igreja de relvado" class="img-fluid mb-3">
+        <figcaption>Imagem da Igreja de Relvado.</figcaption>
+    </figure>
+    
+    <p>Também havia a bodega do Sr. Antenor Valandro que a família usava basicamente para vender ovos e comprar açúcar branco, sal e outras miudezas. Quase tudo que usavam para a alimentação da família era produzido na propriedade. Para moer a farinha de polenta, de trigo e descascar o arroz havia 02 moinhos de pedra, um em Relvado e outro na Localidade de Barra do Coqueiro onde fazíamos a troca de milho por farinha ou aguardávamos a moagem do mesmo. O trajeto era feito a cavalo.</p>
+    
+    <p>No ano de 1969 surgiu através da Cooperativa-Cosuel um projeto de colonização para reassentamento de (60) associados na Fazenda Ibiaça, no município de Tupanciretã, na região central do estado. Cada associado receberia 100 hectares de terra. As famílias do seu Pedro, do tio Luiz Basso e vizinhos como Marco Alberton e Ivo Lorenzini estavam inscritas para receberem um lote de terra. Viveram dias agitados e de expectativa com a possível mudança. Porém levado o assunto para decisão da Assembleia Geral de associados, a maioria decidiu não aprovar o projeto, gerando frustração nas famílias inscritas. No ano de 2021 o município de Tupanciretã foi o maior produtor de soja do RS.</p>
+    
+    <p>No ano de 1980, seu Pedro Basso e o filho José, seu vizinho Marco Alberton e o filho Pedro participaram de outro projeto de colonização para assentamento de famílias, através da Cooperativa dos Suinicultores de Encantado e a ACAMPO do estado de Minas Gerais. Desta vez o projeto da cooperativa teve êxito e o filho José Basso adquiriu uma fazenda no município de Iraí de Minas. Mudou-se para lá em março de 1980. A fazenda fica a 20 Km da sede do município e a 70 km da cidade de Uberlândia. No início do ano de 1984, levou o mano Ademir para trabalhar com ele.</p>
+    
+    <p>No ano de 1985, após uma longa estiagem (não chovia) na região de Encantado, onde a família do seu Pedro ficou sem água para a criação de porcos e os outros animais, sendo que tinha que buscá-la há quase dois quilômetros da sede. Este trabalho era feito com uma carroça (que transportava uma ou mais pipas de água) puxada por uma junta de bois. Estes fatos fizeram com que a família começasse os preparativos para mudar para Irai de Minas. Em agosto do mesmo ano ocorreu a mudança da família levando consigo alguns pertences e foram morar na fazenda com os filhos José e o Admir. Com seu Pedro e dona Margarida mudaram os filhos Clarice, Celso e André. Os filhos Sérgio e Cilene na época moravam em Porto Alegre e a filha Iracema em Santa Cruz do Sul.</p>
+    
+    <p>Na fazenda seu Pedro cuidava da criação de porcos, do gado, do pomar, atendia as pessoas que chegavam na fazenda. Buscava e levava os empregados para trabalhar na lavoura. Aos domingos junto com dona Margarida iam à missa, onde seu Pedro ajudava na Igreja como Ministro da Eucaristia. Também participavam da roda de chimarrão na sede do clube da cooperativa.</p>
+    
+    <p>No ano de 1986, a família Pedro Basso teve uma grande perda. No dia 07 de maio, um acidente com um trator ceifou a vida do filho Ademir, na época com apenas 20 anos de idade.</p>
+    
+    <p>Com a aposentadoria da dona Margarida que cuidava da casa e fazia comida para a família e os empregados, mudaram-se para a cidade de Irai de Minas, onde se Pedro cuidava de dois terrenos vizinhos e plantava hortaliças, aipim, milho verde e cuidava do pomar. Residiram na cidade por cinco anos.</p>
+    
+    <p>No ano de 1999 mudaram para a cidade de Uberlândia, onde os filhos Celso e André haviam aberto uma casa de comércio no ano de 1992 (uma casa agropecuária chamada Centroeste).</p>
+    
+    <p>No dia 02 de março de 2007 completaram 50 anos de casados com missa e uma grande festa na qual participaram os parentes vindos de vários estados do Brasil, e da Itália vieram os sobrinhos do seu Pedro – Irene Basso e Fausto Pilatti.</p>
+    
+    <p>Em Uberlândia seu Pedro e Dona Margarida participavam ativamente da comunidade e da Igreja, onde fizeram muitas amizades com os vizinhos, com os clientes das lojas e principalmente com as pessoas da Igreja, formaram uma grande fraternidade com eles.</p>
+    
+    <p>No ano de 2015 a esposa Margarida ficou bastante doente, vindo a falecer no 05/02/2016. Foi sepultada no cemitério Parque dos Buritis em Uberlândia.</p>
+    
+    <p>No bairro Santa Mônica, em Uberlândia, na rua Péricles Viera da Mota, próximo de onde morava, seu Pedro Basso foi homenageado com o nome de um prédio residencial.</p>
+    
+    <figure>
+        <img src="img\Edificio-PB.png" alt="Imagem da igreja de relvado" class="img-fluid mb-3">
+        <figcaption>Imagem da Igreja de Relvado.</figcaption>
+    </figure>
+    
+    <p>O Sr. Pedro Basso viveu longos 89 anos de vida, vindo a falecer no dia 30 de abril de 2022, de parada cardíaca. Foi sepultado junto com a esposa e filho Ademir Basso, no cemitério Parque dos Buritis em Uberlândia. Os netos fizeram uma homenagem ele com uma coroa de flores, onde se lia “Sempre lembraremos da Velha Cebola” música do Folclore italiano que ele cantava para os netos.</p>
+    
+    <p>O casal Pedro e Margarida tiveram 08 filhos, pela ordem - Sérgio, José, Cilene, Iracema, Clarice, Ademir (falecido em 1986), Celso e André. Os netos e outros membros da família estão relacionados na árvore genealógica da família de Pedro Basso.</p>
+
+
+   
+    
+
+<!-- Div para Foto abaixo -->
+
+<figure>
+    <img src="img\Velório.png" alt="Imagem de Sílvio Basso" class="img-fluid mb-3">
+    <figcaption>Velório de Pedro Basso.
+</figure>
+
+<p class="lead text-justify">
+    A família era grande, a terra era pouca, então os filhos tiveram que estudar e buscar outros rumos na vida, ou seja, migrar para fazer faculdade e trabalhar em outras cidades.
+    </p>
+    <p class="lead text-justify">
+    O Filho Sérgio foi estudar no seminário no ano de 1972 a 1977. Em 1978 foi morar, trabalhar e estudar em Porto Alegre. Hoje reside com a esposa na cidade de Taquara, R/S.
+    </p>
+    <p class="lead text-justify">
+    O filho José estudou na escola agrícola FATERCO, trabalhou e estudou um ano em Porto Alegre. No ano de 1980 mudou-se para Irai de Minas, estado de Minas Gerais onde através de um projeto da ACAMPO com a Cooperativa de Encantado adquiriu uma área de terra. Reside em Uberlândia, Minas gerais.
+    </p>
+    <p class="lead text-justify">
+    A filha Cilene, foi estudar e trabalhar na cidade de Encantado, posteriormente em Porto Alegre. Reside na cidade de Uberlândia, Minas Gerais.
+    </p>
+    <p class="lead text-justify">
+    A filha Iracema, foi trabalhar e estudar na cidade de Encantado, depois em Santa Cruz do Sul. Reside com a família na cidade de Uberlândia.
+    </p>
+    <p class="lead text-justify">
+    A filha Clarice foi trabalhar e estudar em Encantado, mudou-se com a família para Irai de Minas. Reside com o marido na fazenda em Guarda-Mor, Minas Gerais.
+    </p>
+    <p class="lead text-justify">
+    O filho Celso estudou no seminário, mudou com a família para Irai de Minas. Depois foi trabalhar e estudar em Uberlândia, onde reside atualmente.
+    </p>
+    <p class="lead text-justify">
+    O filho André estudou e trabalhou com os pais, até mudar para Irai de Minas com a família. Depois foi estudar e trabalhar na cidade de Uberlândia, onde reside atualmente.
+    </p>
+
+
+    <figure>
+        <img src="img/Documentos para o site/Fotos das familias Basso/Fotos Familia Pedro Basso/Margarida e Pedro Basso com filhos, genros, noras e netos.jpg" alt="Imagem da igreja de relvado" class="img-fluid mb-3">
+        <figcaption>Bodas de Ouro.</figcaption>
+    </figure>
+    
+        </div>
+    </div>
+</div>
+</div>
+
+    
+     
+    <!-- Sobre o Nome e a História de Encantado -->
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6"> <!-- Alterei de col-lg-3 para col-lg-4 -->
+                <h4 class="text-primary mb-4">Onde Estamos</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Porto Alegre, RS - Brasil</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>lzb1093@outlook.com</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>sergiobasso1924@gmail.com</p>
+                <div class="d-flex pt-3">
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.instagram.com/lucas.zanettebasso/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/lucas.zanettebasso" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.linkedin.com/in/lucas-zanette-basso-756395b9/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6"> <!-- Alterei de col-lg-3 para col-lg-4 -->
+                <h4 class="text-primary mb-4">Colaboradores</h4>
+                <a class="btn btn-link" href="https://consportoalegre.esteri.it/pt/" target="_blank">Consulado Italiano</a>
+                <a class="btn btn-link" href="https://www.angelozanatta.com.br/" target="_blank">Família Zanatta</a>
+            </div>
+            <div class="col-lg-4 col-md-6"> <!-- Alterei de col-lg-3 para col-lg-4 -->
+                <h4 class="text-primary mb-4">Links Parceiros</h4>
+                <a class="btn btn-link" href="https://www.somospet2pet.com.br/dogminas" target="_blank">Dog Minas</a>
+                <a class="btn btn-link" href="https://www.centrooestepet.com.br/" target="_blank">Centro Oeste Pet</a>
+                <a class="btn btn-link" href="https://www.instagram.com/agro_sao_jorge_udia/" target="_blank">Agro São Jorge</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="fw-medium" href="#">Família Basso</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    Desenvolvido por <a class="fw-medium" href="https://htmlcodex.com">Lucas Zanette Basso</a> Distributed By <a class="fw-medium" href="https://themewagon.com">ThemeWagon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

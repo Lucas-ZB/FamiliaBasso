@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Árvore Genealógica | Família Basso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça a descendência do patriarca Marco Basso e as famílias que formaram nossa história.">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #B08E56;
+            --bg-light: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: #333;
+        }
+
+        /* Título Principal */
+        .page-header .display-2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .page-header .display-2 { font-size: 2.5rem; }
+        }
+
+        /* --- SEÇÃO DA ÁRVORE VISUAL (IMAGEM GRANDE) --- */
+        .tree-diagram-section {
+            background-color: #fff;
+            padding: 3rem 1rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .tree-diagram-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- CARTÕES DOS FAMILIARES (FAMILY CARDS) --- */
+        .family-section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .family-section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .family-card {
+            background: #fff;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; 
+        }
+
+        .family-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-img-wrapper {
+            overflow: hidden;
+            height: 250px; 
+            position: relative;
+        }
+
+        .family-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            transition: transform 0.5s ease;
+        }
+
+        .family-card:hover img {
+            transform: scale(1.05); 
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #222;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Etiqueta de Geração */
+        .badge-generation {
+            background-color: #333;
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+            opacity: 0.9;
+        }
+
+        /* Diferenciação para casamentos */
+        .marriage-tag {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .m-first { background-color: #e3f2fd; color: #0d47a1; } 
+        .m-second { background-color: #fce4ec; color: #880e4f; } 
+        .m-italy { background-color: #e8f5e9; color: #1b5e20; } 
+
+    </style>
+</head>
+
+<body>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center" style="z-index:9999;">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Carregando...</span>
+        </div>
+    </div>
+
+<!-- Navbar Start -->
+   <div class="container-fluid bg-white sticky-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-2">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <div class="d-flex align-items-center">
+                        <div class="mr-3"><img class="img-fluid smaller-image" src="img/2060627.png" alt="Imagem Esquerda">
+                    </div>
+                    <img class="img-fluid smaller-image ms-2" src="img/Brasão-da-família-Basso.jpg" alt="Logo"> 
+                    <span class="logo-text ms-2 text-justify">Família Basso</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link  ">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">História</a>
+                            <div class="dropdown-menu bg-light rounded-0 m-0">
+                                <a href="Arvore.html" class="dropdown-item  ">Árvore Genealógica</a>
+                                    <a href="Historia_do_Sobrenome.html" class="dropdown-item">História da Família</a>
+                                    <a href="Historia_de_Encantado.html" class="dropdown-item">História de Encantado</a>
+                                    <a href="Historia_de_Linha_Salvacao.html" class="dropdown-item">História de Linha Salvação</a>
+                                    <a href="Historia_da_Familia.html" class="dropdown-item">História do Sobrenome</a>
+                                    <a href="Historia_da_Emigracao.html" class="dropdown-item">História da Emigração</a>
+                                </div>
+                            </div>
+                            <a href="Documentos.html" class="nav-item nav-link">Documentos</a>
+                            <a href="Musicas.html" class="nav-item nav-link">Músicas</a>
+                            <a href="store.html" class="nav-item nav-link">Encontros</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Depoimentos</a>
+                                <div class="dropdown-menu bg-light rounded-0 m-0">
+                                    <a href="depoimento_Maria_Basso_Golin.html" class="dropdown-item">Depoimento de Maria Basso G.</a>
+                                    <a href="depoimento_Marco_Basso.html" class="dropdown-item">Depoimento de Marco Basso</a>
+                                    <a href="depoimento_Thereza_Basso_Soares.html" class="dropdown-item">Depoimento de Thereza Basso S.</a>
+                                    <a href="depoimento_João_Basso.html" class="dropdown-item">Relato de Vida de João Basso</a>
+                                    <a href="depoimento_Silvio.html" class="dropdown-item">Depoimento de Silvestro Basso</a>
+                                    <a href="depoimento_Serafino_Basso.html" class="dropdown-item">Depoimento de Serafino Basso</a>
+                                    <a href="depoimento_Catarino.html" class="dropdown-item">Depoimento de Catterino Basso</a>
+                                    <a href="depoimento_Luiz_Basso.html" class="dropdown-item">Depoimento de Luiz Basso</a>
+                                    <a href="depoimento_Pedro_Basso.html" class="dropdown-item">Depoimento de Pedro Basso</a>
+                                    <a href="Relato_Vida_Imigrante.html" class="dropdown-item">Relato de Vida de Imigrante Basso</a>
+                            </div>
+                            
+                        </div> 
+                        <a href="Contato.html" class="nav-item nav-link">Contato</a>
+                    </div>
+                    <button type="button" class="btn btn-sm p-0 ms-4"><i class="fa fa-search"></i></button>
+                    <div class="d-flex align-items-center">
+                    <div class="mr-3"><img class="img-fluid smaller-image" src="img/bandeira-do-brasil.png" alt="Imagem Direita">
+                </div>
+            </div>
+            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <!-- Rest of the navigation links inside the collapse element -->
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Navbar End -->
+
+    <div class="container-fluid page-header py-5 mb-4">
+        <div class="container text-center py-4">
+            <h1 class="display-2 text-dark mb-3">Nossa Família</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">História</a></li>
+                    <li class="breadcrumb-item text-dark" aria-current="page">Árvore Genealógica</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        
+        <div class="tree-diagram-section">
+            <h2 class="mb-4" style="font-family: 'Playfair Display', serif;">O Diagrama da Família</h2>
+            <p class="text-muted mb-4">Representação visual da descendência a partir de 1874.</p>
+            <img src="img/Gemini_Generated_Image_aoqzsfaoqzsfaoqz(1).png" alt="Desenho da Árvore Genealógica" class="tree-diagram-img">
+        </div>
+
+        <h2 class="family-section-title">Os Patriarcas</h2>
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="family-card">
+                    <span class="badge-generation">1ª Geração</span>
+                    <div class="card-img-wrapper">
+                        <img src="img/Foto 3 Marco Basso, o patriarca.jpeg" alt="Marco Basso">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Marco Basso</h3>
+                        <span class="card-subtitle">1874 — 1962</span>
+                        <p class="card-text">Nascido em Cassola, Itália. Emigrou para o Brasil em 1924. Estabeleceu as raízes da família em Linha Salvação, Relvado.</p>
+                        <a href="depoimento_Marco_Basso.html" class="btn btn-sm btn-outline-primary mt-2">Ver Depoimento</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="family-card">
+                    <span class="badge-generation">1ª Esposa</span>
+                    <div class="card-img-wrapper">
+                        <img src="img/28. Foto Marco Basso e a 1º esposa Catterina Viero - Copia.jpg" alt="Catterina Viero">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Catterina Viero</h3>
+                        <span class="card-subtitle">1ª Esposa de Marco Basso</span>
+                        <p class="card-text">Casaram-se na Itália em 1908. Faleceu no Brasil em 1926, pouco tempo após a chegada da família.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="family-card">
+                    <span class="badge-generation">2ª Esposa</span>
+                    <div class="card-img-wrapper">
+                        <img src="img/30. Foto  Avô Marco, Avó Maria no Casam. Catterino e Elvira Basso e pai. - Copia.jpg" alt="Maria Pedrassani">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Maria Pedrassani</h3>
+                        <span class="card-subtitle">2ª Esposa de Marco Basso</span>
+                        <p class="card-text">Casaram-se no Brasil em 1927. Ajudou a criar os filhos e foi fundamental para expandir e consolidar a família.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="family-section-title">Os Filhos (2ª Geração)</h2>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            <div class="col">
+                <div class="family-card">
+                    <div class="card-img-wrapper">
+                        <img src="img/1.2 F. casam. pais da prima Irene.jpg" alt="Giuseppe Basso"> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Giuseppe Basso</h3>
+                        <span class="marriage-tag m-italy">Ficou na Itália</span>
+                        <p class="card-text mt-3">Filho primogênito. Permaneceu na Itália estudando e seguiu carreira militar. Teve uma filha, Irene.</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary mt-2">Ver História</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="family-card">
+                    <div class="card-img-wrapper">
+                        <img src="img/Tio Sílvio Basso.1 (1).jpg" alt="Silvestro Basso"> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Silvestro (Silvio)</h3>
+                        <span class="marriage-tag m-first">1º Casamento</span>
+                        <p class="card-text mt-3">Nascido na Itália. Migrou para o oeste de Santa Catarina (Chapecó) na década de 40.</p>
+                        <a href="depoimento_Silvestro_Basso.html" class="btn btn-sm btn-outline-primary mt-2">Ver Depoimento</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="family-card">
+                    <div class="card-img-wrapper">
+                        <img src="img/serafino.jpg" alt="Serafino Basso"> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Serafino (Antônio)</h3>
+                        <span class="marriage-tag m-first">1º Casamento</span>
+                        <p class="card-text mt-3">Conhecido como Antônio. Também migrou para Santa Catarina em busca de novas terras.</p>
+                        <a href="depoimento_Serafino_Basso.html" class="btn btn-sm btn-outline-primary mt-2">Ver Depoimento</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="family-card">
+                    <div class="card-img-wrapper">
+                        <img src="img/casal.jpg" alt="Giovanni Basso"> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Giovanni (João)</h3>
+                        <span class="marriage-tag m-first">1º Casamento</span>
+                        <p class="card-text mt-3">Nascido na Itália. Seguiu o caminho dos irmãos para o oeste catarinense na década de 50.</p>
+                        <a href="depoimento_João_Basso.html" class="btn btn-sm btn-outline-primary mt-2">Ver Relato</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="family-card">
+                    <div class="card-img-wrapper">
+                        <img src="img/casalbassogolin.jpg" alt="Maria Basso"> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Maria Basso</h3>
+                        <span class="marriage-tag m-first">1º Casamento</span>
+                        <p class="card-text mt-3">Nascida na Itália. Casou-se com a família Golin (vizinhos de viagem).</p>
+                        <a href="depoimento_Maria_Basso_Golin.html" class="btn btn-sm btn-outline-primary mt-2">Ver Depoimento</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="family-card">
+                    <div class="card-img-wrapper">
+                        <img src="img/Foto Catarino Basso.jpg" alt="Catterino Basso"> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Catterino Basso</h3>
+                        <span class="marriage-tag m-first">1º Casamento</span>
+                        <p class="card-text mt-3">O caçula dos homens nascidos na Itália. Casou-se com Elvira Faraboli.</p>
+                        <a href="depoimento_Catarino.html" class="btn btn-sm btn-outline-primary mt-2">Ver História</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="family-card">
+                    <div class="card-img-wrapper">
+                        <img src="img/Thereza.jpg" alt="Thereza Basso"> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Thereza Basso</h3>
+                        <span class="marriage-tag m-first">1º Casamento (Brasil)</span>
+                        <p class="card-text mt-3">Primeira filha nascida no Brasil (1924). Criada pela família Gaboardi após a morte da mãe. Migrou para o Paraná.</p>
+                        <a href="depoimento_Thereza_Basso_Soares.html" class="btn btn-sm btn-outline-primary mt-2">Ver Depoimento</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="family-card">
+                    <div class="card-img-wrapper">
+                        <img src="img/LuizBasso.jpg" alt="Luiz Basso"> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Luiz Basso</h3>
+                        <span class="marriage-tag m-second">2º Casamento</span>                         
+                        <p class="card-text mt-3">Filho de Marco e Maria Pedrassani. Nascido no Brasil.</p>
+                        <a href="depoimento_Luiz_Basso.html" class="btn btn-sm btn-outline-primary mt-2">Ver Depoimento</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="family-card">
+                    <div class="card-img-wrapper">
+                        <img src="img/PedroMargarida.jpg" alt="Pedro Basso"> </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Pedro Basso</h3>
+                        <span class="marriage-tag m-second">2º Casamento</span>
+                        <p class="card-text mt-3">Filho de Marco e Maria Pedrassani. Completou Bodas de Ouro com Margarida Basso.</p>
+                        <a href="depoimento_Pedro_Basso.html" class="btn btn-sm btn-outline-primary mt-2">Ver Depoimento</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+        
+        <div class="text-center mt-5">
+            <p class="text-muted fst-italic">"Árvore plantada com amor, regada com suor e colhida com gratidão."</p>
+        </div>
+
+    </div>
+
+    <div class="container-fluid bg-dark footer mt-5 py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-primary mb-4">Onde Estamos</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Porto Alegre, RS - Brasil</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>lzb1093@outlook.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>sergiobasso1924@gmail.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.instagram.com/lucas.zanettebasso/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/lucas.zanettebasso" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-primary mb-4">Colaboradores</h4>
+                    <a class="btn btn-link" href="https://consportoalegre.esteri.it/pt/" target="_blank">Consulado Italiano</a>
+                    <a class="btn btn-link" href="https://www.angelozanatta.com.br/" target="_blank">Família Zanatta</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-primary mb-4">Links Parceiros</h4>
+                    <a class="btn btn-link" href="https://www.somospet2pet.com.br/dogminas" target="_blank">Dog Minas</a>
+                <a class="btn btn-link" href="https://www.centrooestepet.com.br/" target="_blank">Centro Oeste Pet</a>
+                <a class="btn btn-link" href="https://www.instagram.com/agro_sao_jorge_udia/" target="_blank">Agro São Jorge</a>
+                <a class="btn btn-link" href="https://www.instagram.com/pet2pet_?igsh=MWQ2dG0ycWIwaDJrcA%3D%3D" target="_blank">Pet 2 Pet</a>
+                <a class="btn btn-link" href="https://www.instagram.com/vetclinica_udi/" target="_blank">VetClínica</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="fw-medium" href="#">Família Basso</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    Desenvolvido por <a class="fw-medium" href="#">Lucas Zanette Basso</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Preloader Script
+        window.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function(){
+                const spinner = document.getElementById('spinner');
+                if (spinner) {
+                    spinner.classList.remove('show');
+                }
+            }, 800); 
+        });
+    </script>
+</body>
+
+</html>

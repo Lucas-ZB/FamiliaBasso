@@ -1,104 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
-    <title>Tea House - Tea Shop Website Template</title>
+    <title>Família Basso - Depoimentos</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="História da Família Basso, Genealogia, Depoimentos" name="keywords">
+    <meta content="Relatos e histórias de vida dos membros da Família Basso." name="description">
 
-    <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', Arial, sans-serif; /* Usando a fonte do Google importada para melhor leitura */
             background-color: #f7f7f7;
             margin: 0;
             padding: 0;
+            color: #444; /* Cor um pouco mais escura para melhor contraste */
         }
 
-        h1 {
-            text-align: center;
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif; /* Fonte serifada para títulos dá elegância */
             color: #333;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            font-weight: 900;
+        }
+
+        h3 {
+            margin-top: 3rem; /* Mais espaço antes de novos nomes */
+            border-bottom: 2px solid #007bff; /* Linha visual para separar seções */
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         .bodycontainer {
-            max-width: 800px;
+            max-width: 1200px; /* 1400px pode ser muito largo para leitura contínua, 1200px é mais seguro */
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px;
             background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
         }
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #666;
-            text-align: justify;
-
+        /* OTIMIZAÇÃO DE LEITURA */
+        .story-text {
+            font-size: 1.125rem; /* 18px - Tamanho confortável */
+            line-height: 1.8; /* Altura da linha arejada */
+            text-align: left; /* Alinhamento à esquerda é superior para leitura em telas */
+            margin-bottom: 1.5rem;
         }
         
-        blockquote {
-            border-left: 4px solid #007bff;
-            margin: 0;
-            padding-left: 15px;
-            color: #777;
+        .story-text p {
+            margin-bottom: 1.5rem; /* Espaço claro entre parágrafos */
         }
 
-        .source {
-            font-style: italic;
-        }
-
-        figure {
-            text-align: center;
-        }
-
-        img {
+        .img-featured {
             max-width: 100%;
             height: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
         }
 
-        figcaption {
-            text-align: center;
-            font-style: italic;
-            margin-top: 10px; /* Espaço entre a imagem e a legenda */
+        /* Navbar Tweaks */
+        .smaller-image {
+            max-height: 50px;
+            width: auto;
         }
         
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* Footer links */
+        .footer a {
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body>
-    <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>
-    <!-- Spinner End -->
-
     
-<!-- Navbar Start -->
-<div class="container-fluid bg-white sticky-top">
+    <!-- Navbar Start -->
+   <div class="container-fluid bg-white sticky-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-2">
             <div class="d-flex align-items-center justify-content-between w-100">
@@ -110,32 +118,34 @@
                 </div>
                 <div class="d-flex align-items-center">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="index.html" class="nav-item nav-link  ">Home</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" >História</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">História</a>
                             <div class="dropdown-menu bg-light rounded-0 m-0">
-                                <a href="Historia_do_Sobrenome.html" class="dropdown-item">História da Família</a>
-                                        <a href="Historia_de_Encantado.html" class="dropdown-item">História de Encantado</a>
-                                        <a href="Historia_de_Linha_Salvacao.html" class="dropdown-item">História de Linha Salvação</a>
-                                        <a href="Historia_da_Familia.html" class="dropdown-item">Hisória do Sobrenome</a>
-                                <a href="Historia_da_Emigracao.html" class="dropdown-item">Hisória da Emigração na Europa e Itália</a>
+                                <a href="Arvore.html" class="dropdown-item  ">Árvore Genealógica</a>
+                                    <a href="Historia_do_Sobrenome.html" class="dropdown-item">História da Família</a>
+                                    <a href="Historia_de_Encantado.html" class="dropdown-item">História de Encantado</a>
+                                    <a href="Historia_de_Linha_Salvacao.html" class="dropdown-item">História de Linha Salvação</a>
+                                    <a href="Historia_da_Familia.html" class="dropdown-item">História do Sobrenome</a>
+                                    <a href="Historia_da_Emigracao.html" class="dropdown-item">História da Emigração</a>
+                                </div>
                             </div>
-                        </div>
-                        <a href="Documentos.html" class="nav-item nav-link ">Documentos</a>
-                        <a href="Musicas.html" class="nav-item nav-link ">Músicas</a>
-                        <a href="store.html" class="nav-item nav-link">Encontros</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Depoimentos</a>
-                            <div class="dropdown-menu bg-light rounded-0 m-0">
-                                <a href="depoimento_Maria_Basso_Golin.html" class="dropdown-item">Depoimento de Maria Basso G.</a>
-                                <a href="depoimento_Marco_Basso.html" class="dropdown-item">Depoimento de Marco Basso</a>
-                                <a href="depoimento_Thereza_Basso_Soares.html" class="dropdown-item">Depoimento de Thereza Basso S.</a>
-                                <a href="depoimento_João_Basso.html" class="dropdown-item">Relato de Vida de João Basso</a>
-                                <a href="depoimento_Silvio.html" class="dropdown-item">Relato de Vida de Silvestrio Basso</a>
-                                <a href="depoimento_Pedro_Basso.html" class="dropdown-item">Relato de Vida de Pedro Basso</a>
-                                <a href="depoimento_Luiz_Basso.html" class="dropdown-item">Relato de Vida de Luiz Basso</a>
-
-                                
+                            <a href="Documentos.html" class="nav-item nav-link">Documentos</a>
+                            <a href="Musicas.html" class="nav-item nav-link">Músicas</a>
+                            <a href="store.html" class="nav-item nav-link">Encontros</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Depoimentos</a>
+                                <div class="dropdown-menu bg-light rounded-0 m-0">
+                                    <a href="depoimento_Maria_Basso_Golin.html" class="dropdown-item">Depoimento de Maria Basso G.</a>
+                                    <a href="depoimento_Marco_Basso.html" class="dropdown-item">Depoimento de Marco Basso</a>
+                                    <a href="depoimento_Thereza_Basso_Soares.html" class="dropdown-item">Depoimento de Thereza Basso S.</a>
+                                    <a href="depoimento_João_Basso.html" class="dropdown-item">Relato de Vida de João Basso</a>
+                                    <a href="depoimento_Silvio.html" class="dropdown-item">Depoimento de Silvestro Basso</a>
+                                    <a href="depoimento_Serafino_Basso.html" class="dropdown-item">Depoimento de Serafino Basso</a>
+                                    <a href="depoimento_Catarino.html" class="dropdown-item">Depoimento de Catterino Basso</a>
+                                    <a href="depoimento_Luiz_Basso.html" class="dropdown-item">Depoimento de Luiz Basso</a>
+                                    <a href="depoimento_Pedro_Basso.html" class="dropdown-item">Depoimento de Pedro Basso</a>
+                                    <a href="Relato_Vida_Imigrante.html" class="dropdown-item">Relato de Vida de Imigrante Basso</a>
                             </div>
                             
                         </div> 
@@ -157,7 +167,9 @@
 </div>
 <!-- Navbar End -->
  
-    <!-- Page Header Start -->
+            </nav>
+        </div>
+    </div>
     <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center py-5">
             <h1 class="display-2 text-dark mb-4 animated slideInDown">Depoimentos</h1>
@@ -170,80 +182,107 @@
             </nav>
         </div>
     </div>
-    <!-- Page Header End -->
-
-    <!-- Sobre o Nome e a História de Encantado -->
-
-<div class="bodycontainer">
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <!-- Título -->
-                <h2>A Trajetória e Descendência de Luiz Basso</h2>
-    
-                <!-- Imagem -->
-                <img src="img\Documentos para o site\Fotos das familias Basso\Fotos Familia Luiz Basso\Luiz.jpg" alt="Imagem de Sílvio Basso" class="img-fluid mb-3">
-    
-                <!-- Parágrafo -->
-                <p class="lead text-justify">
-
-                    Luiz Basso nasceu no dia 06 de janeiro de 1931. O oitavo filho de Marco Basso e o primeiro filho com a segunda esposa Maria Pedrassani, na localidade de Linha Salvação, hoje município de Relvado, na época distrito de Encantado.
-                    Passou a infância e juventude com os pais trabalhando na lavoura e estudou até a 3ª série na escola da comunidade. Seu Luiz foi o escolhido pelo “nonno” Marco para cuidar dos pais, por isso ele ficou morando na casa paterna.
-                    Na juventude enamorou-se de Agheta Gaboardi que morava na vizinhança, vindo a casar com ela no dia ....
-                    O casal foi agraciado com nove filhos Maria de Lurdes, Beatriz, Ana, Irene, Ivanira, Marco, Moacir, Rejane e Marciano.
-                    Seu Luiz jogou no time de futebol de campo de Linha Salvação, jogava-se contra os times de outras localidades e também foi presidente do time. Foi uma pessoa muito ativa e participante , ajudou a construir a igreja de material nova de Linha Salvação e  foi por diversas vezes da diretoria.
-                    Luiz sempre trabalhou na roça, mas mesmo assim sempre cuidou que seus filhos fossem a escola e estava atento ao desenvolvimento do local onde morava.  Luiz se associou a Cooperativa dos suinicultores de Encantado Ltda (COSUEL) que ficava na sede do munícipio de Encantado. Quase tudo que era produzido na sua propriedade era comercializado com a  Cooperativa.
-                Em 1982 foi um dos sócios fundadores da Cooperativa Sicred no município de Encantado. No ano de 1998 mudou-se para Venancio Aires, trazido pelos filhos que já residiam e trabalhavam lá. Mudou-se com a esposa para ficar mais próximo dos filhos, numa propriedade no Acesso Dona Leopoldina, vizinho ao Parque do Chimarrão. Associou-se a comunidade Nossa Senhora Aparecida de Herval Mirim onde sempre estava disposto a ajudar.
-                Luiz sem sempre foi uma pessoa de destaque nas comunidades onde residia, sempre empenhado e ajudar e auxiliar no que precisasse, uma espécie de líder, tanto onde nasceu bem como na comunidade Nossa Senhora Aparecida.
-                Depois da aposentadoria da sua esposa, o casal começou a passear mais, a visitar seus parentes e filhos e a participar de muitas eventos socias e recreativos como festas e bailinhos. O casal sempre gostou muito de dançar.
-                O seu Luiz Basso faleceu repentinamente de ataque cardíaco no dia.................. O enterro ocorreu no cemitério de Linha Salvação-Relvado, onde viveu grande parte da vida.
-                Dona Ageta viveu longos 89 anos de vida. Faleceu da doença Covid-19 no dia ........ Também foi enterrada em Linha Salvação junto com seu esposo. 
-                Os filhos do seu Luiz também migram para trabalhar e estudar nas cidades da região como Bento Gonçalves, Dr. Ricardo, Encantado, Porto Alegre, Santa Cruz e Venancio Aires. E nos estados do Paraná na cidade de Curitiba, e Minas Gerais na cidade de Iraí de Minas.
-                
+    <div class="bodycontainer">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
                     
-        </div>
-    </div>
-</div>
-</div>
+                    <div class="text-center mb-4">
+                        <h2>Serafino Antonio Basso</h2>
+                        <img src="img/serafino.jpg" alt="Foto de Serafino Antonio Basso" class="img-featured">
+                    </div>
 
-    
-     
-    <!-- Sobre o Nome e a História de Encantado -->
+                    <div class="story-text">
+                        <p>Serafino Antonio Basso era filho de Marcos Basso e Catarina Viera Basso. Vieram de Gênova, Itália, chegaram ao Brasil no dia 16 de junho de 1924 e foram morar na Linha Salvação, Distrito de Relvado, município de Encantado.</p>
+                        
+                        <p>Serafino Antonio tinha 11 anos quando vieram para o Brasil. Com 26 anos, casou-se com Cecília Scartesini e desta união tiveram três filhos: Telvino, Hilda e Igino. Era um homem austero, gostava muito de ler jornal e assistir notícias, principalmente as que se referiam aos governantes.</p>
+                        
+                        <p>Em 1950, tendo informações que em Santa Catarina encontrariam condições melhores de trabalho, resolveram mudar-se, indo residir no interior de Xaxim, desenvolvendo a agricultura. Como o Telvino, o filho mais velho já havia casado e estava morando em Coronel Freitas, Antonio resolveu mudar-se para lá também, estabelecendo-se em Linha Abelardo Luz, juntamente com o filho.</p>
+                        
+                        <p>O filho Telvino já tinha começado com uma pequena criação de porcos quando o pai chegou e os dois continuaram na atividade. Mas a sorte não estava com eles e uma peste abateu os animais ocasionando muitas mortes. Telvino dizia ao pai que era necessário chamar um bom veterinário para examinar e ver o que estava causando a morte dos suínos mas, seu Antonio, muito seguro, achava que era só para gastar dinheiro em vão.</p>
+                        
+                        <p>Num destes dias em que haviam morrido mais porcos, Telvino recebeu a visita do gerente da Cooperativa Mista Xaxiense, convidando-o para gerenciar uma filial. Muito triste com o que estava acontecendo, pediu a opinião do pai e este respondeu que ele deveria fazer o que achava melhor. Resolveu aceitar.</p>
+                        
+                        <p>Seu Antonio ficou sozinho na roça e, escutando as ideias do filho, começou a criar suínos da raça Duroc, iniciando com dois casais dados de presente pelo filho Telvino. A partir disso, começou a vender chiqueiradas de porcos e a se animar.</p>
+                        
+                        <p>Mais tarde, apareceu um comprador da terra e seu Antonio resolveu vendê-la e voltar a residir em Xaxim, desta vez na cidade, onde ficou até 1984. Com o passar dos anos, seu Antonio achou melhor morar perto do filho Telvino e mudou-se novamente para Coronel Freitas, morando na cidade, em uma casa situada ao lado da que o filho residia.</p>
+                        
+                        <p>Em 1986, seu Antonio sofreu um AVC (acidente vascular cerebral), falecendo em 20 de junho do mesmo ano.</p>
 
+                        <h3>Telvino Basso</h3>
+                        
+                        <p>Telvino Basso nasceu em Encantado, RS, no dia 20/05/1941 e é casado com a senhora Galantina Domingas Basso. Desta união tiveram seis filhos: Maria Teresinha (in memoriam), Claudete Ines, Marta Regina, Nadia Tereza, Sidiane e Marcos Antonio.</p>
+                        
+                        <p>Três dias após o casamento, Telvino e Galantina foram morar na Linha Abelardo Luz, município de Coronel Freitas para trabalhar na lavoura. Depois de 7 meses residindo no local, certo dia apareceu um dos membros da Diretoria da Cooperativa Mista Xaxiense convidando-o para trabalhar em uma filial daquela cooperativa.</p> 
+                        
+                        <p>Concordando com as propostas, começou a trabalhar na sede daquele município como gerente. Mais tarde, em 1972, foi eleito presidente da matriz. Em 1973, o convidaram para ser prefeito do município de Coronel Freitas, sendo candidato único, deixando assim a função na Cooperativa para comandar o município até 1977.</p>
+                        
+                        <p>Em 1974 foi eleito também presidente da Cooperativa de Eletrificação Rural do Vale do Chapecó, exercendo então as duas funções simultaneamente até 1981. Em 1982 foi eleito, pela segunda vez, prefeito do município de Coronel Freitas, não mais como candidato único, comandando até 1988 — um pleito de 6 anos — e, concomitante a isso, continuava presidindo a Cooperativa.</p>
+                        
+                        <p>Quatro anos depois, desmembrou-se o Distrito de Águas Frias e foi criado o município. Pela experiência em administração pública que Telvino já possuía, a comunidade quis que ele se candidatasse para a prefeitura do novo município. Disputou as eleições, venceu mais uma vez e comandou a prefeitura de 1993 até 1997.</p>
+                        
+                        <p>Seguiu sua vida trabalhando numa pequena fazenda de gado e quatro anos depois voltou à prefeitura exercendo o seu quarto mandato, de 2001 a 2005, dando por encerrada sua carreira política. Telvino é o neto mais velho da geração do Marcos Basso.</p>
 
-<!-- Footer Start -->
-<div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6"> <!-- Alterei de col-lg-3 para col-lg-4 -->
-                <h4 class="text-primary mb-4">Onde Estamos</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Porto Alegre, RS - Brasil</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>lzb1093@outlook.com</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>sergiobasso1924@gmail.com</p>
-                <div class="d-flex pt-3">
-                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.instagram.com/lucas.zanettebasso/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/lucas.zanettebasso" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-primary rounded-circle me-2" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.linkedin.com/in/lucas-zanette-basso-756395b9/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <h3>Hilda Basso</h3>
+                        
+                        <p>Hilda Basso nasceu em Capoeirinhas, Relvado. Lembra da Barra Grande, o último lugar que moraram antes de irem para Xaxim – SC.</p>
+                        
+                        <p>Guarda em sua memória que a localidade situava-se num morro, uma casa alta, velha, mas tinha um pomar grande. O Telvino começou a estudar lá, numa escolinha rural que funcionava de 1ª a 4ª série, tudo junto. Ele descia o morro todos os dias para a escola que ficava numa baixada.</p>
+                        
+                        <p>Quando o Egino nasceu, o vô Marcos morava num outro morro na Linha Salvação. Hilda ficava semanas inteiras lá e a tia Maria cuidava dela. Lembra do vô sentado na escada, perto da noite, tomando chimarrão. Ele tinha um parreiral grande e, na época da colheita da uva, vinham os vizinhos ajudar a colhê-la, com cestos de vime. O tio Pedro, bem magrinho e muito querido, esmagava a uva com os pés pra fazer vinho. O tio Luis e o tio Pedro gostavam muito de cantar “Beijinho Doce”. Da vozinha, a lembrança é de que ia juntar ovos com o avental.</p>
+                        
+                        <p>Quando os tios queriam que o pai fosse ajudar a cortar as parreiras, estendiam um lençol branco no morro e, do outro morro que moravam, o pai via e entendia o recado.</p>
+                        
+                        <p>Em setembro de 1950 mudaram-se para Xaxim – SC. No começo não foi fácil. O tio Sílvio foi muito marcante nessa época, muito querido, que ficará sempre na memória.</p>
+                        
+                        <p>Em 1951, Hilda começou a estudar numa escola muito boa, dirigida por irmãs franciscanas, o “Gomes Carneiro”, onde ficou até acabar o Normal Regional. Sua infância e adolescência foram muito humildes. Nunca ganhou um brinquedo comprado. Mesmo assim, brincou muito: pulava corda, fazia as próprias petecas com palha de milho, pulava amarelinha, brincava de dar aulas, subia nas árvores e outros brinquedos da época.</p>
+                        
+                        <p>O pai era uma pessoa muito enérgica e exigente, mas muito correto. A mãe costurava pra fora em uma época. Com 18 anos, começou a trabalhar em Coronel Freitas como professora de 1ª a 4ª série. O Magistério fez alguns anos depois.</p>
+                        
+                        <p>Permaneceu por 15 anos em Coronel Freitas, onde casou com Valmor Pitt e tiveram 5 filhos: Paulo Roberto, Vanda, Ricardo, Márcia e Fábio. Mudaram-se para Chapecó e não foi nada fácil dar conta da criação de 5 filhos, mas conseguiram superar todas as dificuldades.</p>
+                        
+                        <p>O pai, que enquanto criança era muito durão, tornou-se, mais tarde, o seu melhor amigo, mas morreu jovem, aos 71 anos. Hoje, mora sozinha, é separada, os filhos já casaram e tem 9 netos. Cultiva boas amizades, frequenta a Cidade do Idoso e a oração, pois acredita que sem Deus não somos nada.</p>
+                    </div>
+
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6"> <!-- Alterei de col-lg-3 para col-lg-4 -->
-                <h4 class="text-primary mb-4">Colaboradores</h4>
-                <a class="btn btn-link" href="https://consportoalegre.esteri.it/pt/" target="_blank">Consulado Italiano</a>
-                <a class="btn btn-link" href="https://www.angelozanatta.com.br/" target="_blank">Família Zanatta</a>
-            </div>
-            <div class="col-lg-4 col-md-6"> <!-- Alterei de col-lg-3 para col-lg-4 -->
-                <h4 class="text-primary mb-4">Links Parceiros</h4>
-                <a class="btn btn-link" href="https://www.somospet2pet.com.br/dogminas" target="_blank">Dog Minas</a>
-                <a class="btn btn-link" href="https://www.centrooestepet.com.br/" target="_blank">Centro Oeste Pet</a>
-                <a class="btn btn-link" href="https://www.instagram.com/agro_sao_jorge_udia/" target="_blank">Agro São Jorge</a>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-primary mb-4">Onde Estamos</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Porto Alegre, RS - Brasil</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>lzb1093@outlook.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>sergiobasso1924@gmail.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.instagram.com/lucas.zanettebasso/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/lucas.zanettebasso" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.linkedin.com/in/lucas-zanette-basso-756395b9/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-primary mb-4">Colaboradores</h4>
+                    <div class="d-flex flex-column">
+                        <a class="btn btn-link text-start" href="https://consportoalegre.esteri.it/pt/" target="_blank">Consulado Italiano</a>
+                        <a class="btn btn-link text-start" href="https://www.angelozanatta.com.br/" target="_blank">Família Zanatta</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-primary mb-4">Links Parceiros</h4>
+                    <div class="d-flex flex-column">
+                        <a class="btn btn-link text-start" href="https://www.somospet2pet.com.br/dogminas" target="_blank">Dog Minas</a>
+                        <a class="btn btn-link text-start" href="https://www.centrooestepet.com.br/" target="_blank">Centro Oeste Pet</a>
+                        <a class="btn btn-link text-start" href="https://www.instagram.com/agro_sao_jorge_udia/" target="_blank">Agro São Jorge</a>
+                        <a class="btn btn-link text-start" href="https://www.instagram.com/pet2pet_?igsh=MWQ2dG0ycWIwaDJrcA%3D%3D" target="_blank">Pet 2 Pet</a>
+                        <a class="btn btn-link text-start" href="https://www.instagram.com/vetclinica_udi/" target="_blank">VetClínica</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Footer End -->
-
-    <!-- Copyright Start -->
     <div class="container-fluid copyright py-4">
         <div class="container">
             <div class="row">
@@ -251,19 +290,13 @@
                     &copy; <a class="fw-medium" href="#">Família Basso</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Desenvolvido por <a class="fw-medium" href="https://htmlcodex.com">Lucas Zanette Basso</a> Distributed By <a class="fw-medium" href="https://themewagon.com">ThemeWagon</a>
+                    Desenvolvido por <a class="fw-medium" href="#">Lucas Zanette Basso</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Copyright End -->
-
-    <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-
-    <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -271,7 +304,6 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
 

@@ -36,6 +36,8 @@
             background-color: #f7f7f7;
             margin: 0;
             padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         h1 {
@@ -44,50 +46,121 @@
         }
 
         .bodycontainer {
-            max-width: 1400px; /* Expandindo mais horizontalmente a largura máxima */
+            max-width: 1100px; /* largura confortável para leitura */
             margin: 0 auto;
             padding: 30px 40px;
             background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
         }
 
-        p {
+        /* Tipografia e espaçamento para leitura */
+        .content-section p,
+        .content-section li {
             font-size: 18px;
-            line-height: 1.8;
-            color: #666;
+            line-height: 1.9;
+            color: #444;
             text-align: justify;
-            margin-left: 20px;
-            margin-right: 20px;
-
+            margin-bottom: 1rem;
         }
-        
+
+        .lead {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 0.75rem;
+        }
+
+        .content-section h3 {
+            font-size: 20px;
+            color: #222;
+            margin-top: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .content-section h4 {
+            font-size: 18px;
+            color: #333;
+            margin-top: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .summary {
+            background: #fff8e1;
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid #ffecb3;
+            color: #6b4f05;
+            margin-bottom: 1rem;
+        }
+
+        .download-section {
+            background: #f8f9fb;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #e9edf2;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .download-section .btn {
+            min-width: 190px;
+        }
+
         blockquote {
             border-left: 4px solid #007bff;
             margin: 0;
-            padding-left: 15px;
-            color: #777;
+            padding: 12px 16px;
+            background: #f1f8ff;
+            color: #0b2e5a;
+            border-radius: 4px;
+            margin-bottom: 1rem;
         }
 
-        .source {
-            font-style: italic;
+        .content-section ul {
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section ol {
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
         }
 
         figure {
             text-align: center;
+            margin-bottom: 1rem;
         }
 
         img {
             max-width: 100%;
             height: auto;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         figcaption {
             text-align: center;
             font-style: italic;
             margin-top: 10px; /* Espaço entre a imagem e a legenda */
+            color: #666;
         }
-        
+
+        @media (max-width: 768px) {
+            .bodycontainer { padding: 20px; }
+            .section-title { font-size: 22px; }
+            .content-section p { font-size: 16px; }
+        }
     </style>
 </head>
 
@@ -181,9 +254,9 @@
 <div class="bodycontainer">
     <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <!-- Título -->
-                <h2 style="text-align: center;">A Trajetória e Descendência de Catterino Basso</h2>
+                <h2 class="text-center section-title">A Trajetória e Descendência de Catterino Basso</h2>
     
                 <!-- Imagem -->
                 <figure>
@@ -192,52 +265,43 @@
                 </figure>
 
                 <!-- Seção de Download -->
-                <div class="download-section">
-                    <h4><i class="fas fa-file-pdf download-icon"></i>Relato Completo de Vida</h4>
-                    <p style="margin-bottom: 15px; font-size: 14px;">Acesse o documento completo com a história detalhada de Catterino Basso em formato PDF.</p>
-                    <a href="" class="btn-download" download>
-                        <i class="fas fa-download download-icon"> Relato de Vida de CATARINO BASSO </i> PDF
-                    </a>
+                <div class="download-section" role="region" aria-label="Relato completo">
+                    <div>
+                        <h4 class="mb-0"><i class="fas fa-file-pdf download-icon"></i> Relato Completo de Vida</h4>
+                        <p class="lead">Acesse o documento completo com a história detalhada de Catterino Basso em formato PDF.</p>
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-outline-primary" download aria-label="Baixar PDF do relato"><i class="fas fa-download me-2"></i>Baixar PDF</a>
+                    </div>
                 </div>
-                <br>
+
                 <!-- Conteúdo Estruturado -->
-                <h3><i class="fas fa-book"></i> O Início da Jornada e a Luta na Terra</h3>
-                <p>
-                    A história remonta aos primórdios da família, quando o pequeno Catterino cruzou o oceano vindo da Itália com apenas um ano e nove dias de vida. Após o casamento com Elvira, o casal seguiu o costume da época, morando inicialmente na casa paterna antes de partirem para a Linha Pontão, em Relvado, onde trabalharam como agregados — ou arrendatários, como se dizia na pátria distante.
-                </p>
-                <p>
-                    Foi somente por volta de 1955 que Catterino deixou essa condição para se tornar proprietário de terras em uma área onde praticamente só existia mato virgem, no município de Encantado.
-                </p>
-                <p>
-                    Nesse cenário de natureza plena e generosa, a família foi se construindo com o nascimento de oito filhos: Lourdes Catarina, Claudino, Valdir, Mairi, Vicente, Ana Maria, Carlos e Declides. A vida era pautada por uma simplicidade quase absoluta, onde a iluminação evoluía da lamparina para o lampião, e o sustento vinha do suor derramado sobre a terra, em lidas que começavam cedo, por volta dos cinco ou seis anos de idade.
-                </p>
+                <article class="content-section">
+                    <div class="summary"><strong>Resumo:</strong> Retalhos da história de Catterino e Elvira: chegada ao Brasil em 1924, vida no interior, luta pela terra, educação dos filhos e legado de gratidão.</div>
 
-                <h3><i class="fas fa-graduation-cap"></i> As Sementes do Conhecimento</h3>
-                <p>
-                    Um dos capítulos mais marcantes dessa trajetória foi a presença dos professores que, por falta de infraestrutura na época, moravam na casa da família durante o período escolar. Embora isso às vezes despertasse o ciúme de Catterino, Dona Elvira, com seu apurado instinto materno e humildade, percebeu que aqueles educadores traziam consigo sementes de transformação.
-                </p>
-                <p>
-                    Foi por meio deles que os primeiros livros, revistas e jornais chegaram à propriedade, e que hábitos modernos, como a instalação de água encanada e o uso de copos individuais, foram introduzidos no cotidiano doméstico.
-                </p>
-                <p>
-                    Esses professores foram semeadores que enfrentaram atoleiros e a falta de conforto para transmitir um conhecimento que, embora limitado pelas condições da época, serviu de alicerce para que os filhos pudessem, mais tarde, desbravar seus próprios caminhos na "selva de pedras" das cidades.
-                </p>
+                    <h3>1. As Origens e a Formação da Família</h3>
+                    <p>A narrativa remonta a 1924, quando o avô Marcos e a avó Cattarina vieram de Schiavon, Itália, trazendo o pequeno Catterino, então com apenas 1 ano e 9 dias de vida. Fugindo do fascismo de Mussolini e buscando melhores oportunidades, eles se estabeleceram no Rio Grande do Sul.</p>
+                    <p>Já adulto, Catterino casou-se com Elvira e, como era costume, a primeira morada do casal foi na casa paterna. Posteriormente, mudaram-se para a Linha Pontão (distrito de Relvado, município de Encantado-RS), vivendo como agregados até que, por volta de 1955, Catterino tornou-se proprietário de terras na Linha Nossa Senhora do Loreto (Jacaré), uma área que precisou ser desbravada.</p>
 
-                <h3><i class="fas fa-leaf"></i> Reflexões sobre o "Vil Metal" e a Natureza</h3>
-                <p>
-                    Ao olhar para o passado, Valdir reflete sobre os desafios que surgiram com a modernidade e a ascensão do que ele chama de "vil metal" — o dinheiro que, quando assume o comando, escraviza os humanos e os torna arrogantes e mesquinhos. Ele contrasta essa ganância com a generosidade infinita da natureza, que segue doando seus frutos mesmo quando maltratada e queimada pelos homens.
-                </p>
-                <p>
-                    Havia também o eterno conflito de gerações e a ilusão da "La Cucanha". Muitos agricultores, incluindo os Basso, evitavam investir na própria terra por acreditarem que a verdadeira fartura estava sempre no próximo ano, nas "terras novas" de Santa Catarina. Essa resistência cultural muitas vezes impedia que inovações trazidas pelos filhos que estudavam fossem aplicadas, estagnando o progresso das propriedades.
-                </p>
+                    <h3>2. A Vida no "Interior do Interior"</h3>
+                    <p>A vida era marcada pela simplicidade e pelo trabalho árduo: não havia energia elétrica e o acesso era precário. O trabalho na roça começava cedo e as ferramentas eram rústicas.</p>
+                    <ul>
+                        <li><strong>O Cotidiano:</strong> Crianças começavam a trabalhar entre os 5 e 6 anos de idade; a enxada era companheira diária.</li>
+                        <li><strong>A Escola:</strong> A escola ficava cerca de 2 km de distância, em caminhada por trilhas e pedras; faltavam calçados adequados e os desafios do inverno eram grandes.</li>
+                        <li><strong>A Comunidade:</strong> A vida social girava em torno da igreja e da ajuda mútua: colheitas e trabalhos coletivos eram também ocasiões de festa e convívio.</li>
+                    </ul>
 
-                <h3><i class="fas fa-hands-helping"></i> Um Legado de Gratidão</h3>
-                <p>
-                    Por fim, Valdir compreende que o que eles são hoje é a soma de fragmentos guardados no depósito da memória, no subconsciente que mantém vivas as vozes dos pais e dos professores. Mesmo as partes doloridas ou esquecidas em "dormência" como sementes acabam por germinar quando provocadas pela lembrança.
-                </p>
-                <p>
-                    Toda essa história, vivida na simplicidade do "interior do interior", foi o que deu sustento e embasamento para a vida, deixando como saldo final um profundo sentimento de gratidão por tudo o que foi forjado naquelas terras de mato e pedras.
-                </p>
+                    <h3>3. Reflexões: a Natureza e o "Vil Metal"</h3>
+                    <p>O relato contrapõe a generosidade antiga da terra com a chegada da modernidade. Antigamente, a terra oferecia abundância e solidariedade; com o tempo vieram consumo e desigualdade.</p>
+                    <blockquote>"A terra era vista como mãe doadora; hoje, infelizmente, o dinheiro e a pressa alteraram a relação humana com a natureza."</blockquote>
+
+                    <h3>4. O Papel Transformador dos Professores</h3>
+                    <p>Professores vindos da cidade frequentemente moravam na casa de Catterino e Elvira. Eles trouxeram não só o ensino formal, mas hábitos, noções de higiene, livros e acesso a um mundo maior. A atitude acolhedora de Dona Elvira em receber esses docentes foi decisiva para a formação das crianças.</p>
+
+                    <h3>5. Conclusão: a Diáspora e a Gratidão</h3>
+                    <p>As dificuldades vividas forjaram valores que acompanharam os oito filhos na vida adulta. O texto é, em essência, um agradecimento aos pais, aos antepassados e aos professores que semearam conhecimento e caráter.</p>
+                </article>
+
             </div>
         </div>
     </div>

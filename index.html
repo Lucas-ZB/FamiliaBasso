@@ -80,18 +80,25 @@
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>
+    
     <div class="container-fluid bg-white sticky-top shadow-sm">
     <div class="container">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-2">
-            <div class="d-flex align-items-center justify-content-between w-100">
-                <div class="d-flex align-items-center">
-                        <div class="mr-3"><img class="img-fluid smaller-image" src="img/2060627.png" alt="Imagem Esquerda" style="max-height: 50px;">
-                    </div>
-                    <img class="img-fluid smaller-image ms-2" src="img/Brasão-da-família-Basso.jpg" alt="Logo" style="max-height: 50px;"> 
-                    <span class="logo-text ms-2 text-justify">Família Basso</span>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="navbar-nav ms-auto">
+            
+            <div class="d-flex align-items-center">
+                <div class="mr-3"><img class="img-fluid smaller-image" src="img/2060627.png" alt="Imagem Esquerda"></div>
+                <img class="img-fluid smaller-image ms-2" src="img/Brasão-da-família-Basso.jpg" alt="Logo">
+                <span class="logo-text ms-2 text-justify">Família Basso</span>
+            </div>
+
+            <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="d-flex flex-column flex-lg-row align-items-lg-center ms-auto">
+                    
+                    <div class="navbar-nav">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         
                         <div class="nav-item dropdown">
@@ -114,6 +121,7 @@
                                 <a href="Fotos_Visita_Primos_Italianos.html" class="dropdown-item">Visita Primos Italianos</a>
                             </div>
                         </div>
+
                         <a href="Musicas.html" class="nav-item nav-link">Músicas</a>
                         <a href="store.html" class="nav-item nav-link">Encontros</a>
                         
@@ -134,18 +142,20 @@
                         </div> 
                         <a href="Contato.html" class="nav-item nav-link">Contato</a>
                     </div>
-                    <button type="button" class="btn btn-sm p-0 ms-4"><i class="fa fa-search"></i></button>
-                    <div class="d-flex align-items-center ms-3">
-                        <img class="img-fluid smaller-image" src="img/bandeira-do-brasil.png" alt="Imagem Direita" style="max-height: 30px;">
+
+                    <div class="d-flex align-items-center mt-3 mt-lg-0 ms-lg-4 pb-3 pb-lg-0">
+                        <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
+                        <div class="ms-4 mr-3">
+                            <img class="img-fluid smaller-image" src="img/bandeira-do-brasil.png" alt="Imagem Direita">
+                        </div>
                     </div>
+
                 </div>
-                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
             </div>
         </nav>
     </div>
 </div>
+
 <div class="container-fluid px-0 mb-5">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">

@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Visita Primos Italianos - Família Basso</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    
+    <link href="img/favicon.ico" rel="icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        .header-background {
+            background-image: url('img/historia_documentos.png'); /* Fundo do cabeçalho */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            width: 100%;
+            position: relative;
+        }
+
+        .header-background::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Escurece um pouco para o texto aparecer bem */
+        }
+
+        .text-white-outline {
+            position: relative;
+            color: white;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            font-weight: bold;
+        }
+
+        /* ESTILOS DA GALERIA */
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Faz as fotos ficarem do mesmo tamanho sem distorcer */
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="imageModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 bg-transparent">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" id="closeModalBtn" style="filter: invert(1); z-index: 1051;"></button>
+                </div>
+                <div class="modal-body text-center pt-0">
+                    <img id="expandedImage" src="" alt="Imagem em tela cheia" class="img-fluid rounded shadow-lg" style="max-height: 80vh;">
+                    <p id="imageCaption" class="text-white mt-3 fs-5" style="text-shadow: 1px 1px 3px black;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <div class="container-fluid bg-white sticky-top shadow-sm">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-2">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <div class="d-flex align-items-center">
+                        <div class="mr-3"><img class="img-fluid smaller-image" src="img/2060627.png" alt="Imagem Esquerda" style="max-height: 50px;">
+                    </div>
+                    <img class="img-fluid smaller-image ms-2" src="img/Brasão-da-família-Basso.jpg" alt="Logo" style="max-height: 50px;"> 
+                    <span class="logo-text ms-2 text-justify">Família Basso</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">História</a>
+                            <div class="dropdown-menu bg-light rounded-0 m-0">
+                                <a href="Arvore.html" class="dropdown-item">Árvore Genealógica</a>
+                                <a href="Historia_do_Sobrenome.html" class="dropdown-item">História da Família</a>
+                                <a href="Historia_de_Encantado.html" class="dropdown-item">História de Encantado</a>
+                                <a href="Historia_de_Linha_Salvacao.html" class="dropdown-item">História de Linha Salvação</a>
+                                <a href="Historia_da_Familia.html" class="dropdown-item">História do Sobrenome</a>
+                                <a href="Historia_da_Emigracao.html" class="dropdown-item">História da Emigração</a>
+                            </div>
+                        </div>
+                            
+                        <div class="nav-item dropdown">
+                            <a href="Documentos.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Documentos</a>
+                            <div class="dropdown-menu bg-light rounded-0 m-0">
+                                <a href="Documentos.html" class="dropdown-item">Acervo de Documentos</a>
+                                <a href="Fotos_e_Fatos.html" class="dropdown-item">Fotos e Fatos</a>
+                                <a href="Fotos_Visita_Primos_Italianos.html" class="dropdown-item active">Visita Primos Italianos</a>
+                            </div>
+                        </div>
+
+                        <a href="Musicas.html" class="nav-item nav-link">Músicas</a>
+                        <a href="store.html" class="nav-item nav-link">Encontros</a>
+                        
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Depoimentos</a>
+                            <div class="dropdown-menu bg-light rounded-0 m-0">
+                                <a href="depoimento_Maria_Basso_Golin.html" class="dropdown-item">Depoimento de Maria Basso G.</a>
+                                <a href="depoimento_Marco_Basso.html" class="dropdown-item">Depoimento de Marco Basso</a>
+                                <a href="depoimento_Thereza_Basso_Soares.html" class="dropdown-item">Depoimento de Thereza Basso S.</a>
+                                <a href="depoimento_João_Basso.html" class="dropdown-item">Relato de Vida de João Basso</a>
+                                <a href="depoimento_Silvio.html" class="dropdown-item">Depoimento de Silvestro Basso</a>
+                                <a href="depoimento_Serafino_Basso.html" class="dropdown-item">Depoimento de Serafino Basso</a>
+                                <a href="depoimento_Catarino.html" class="dropdown-item">Depoimento de Catterino Basso</a>
+                                <a href="depoimento_Luiz_Basso.html" class="dropdown-item">Depoimento de Luiz Basso</a>
+                                <a href="depoimento_Pedro_Basso.html" class="dropdown-item">Depoimento de Pedro Basso</a>
+                                <a href="Relato_Vida_Imigrante.html" class="dropdown-item">Relato de Vida de Imigrante Basso</a>
+                            </div>
+                        </div> 
+                        <a href="Contato.html" class="nav-item nav-link">Contato</a>
+                    </div>
+                    <button type="button" class="btn btn-sm p-0 ms-4"><i class="fa fa-search"></i></button>
+                    <div class="d-flex align-items-center ms-3">
+                        <img class="img-fluid smaller-image" src="img/bandeira-do-brasil.png" alt="Imagem Direita" style="max-height: 30px;">
+                    </div>
+                </div>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="header-background d-flex align-items-center">
+    <div class="container text-center">
+        <h1 class="display-2 text-white-outline mb-4 animated slideInDown">A Visita</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="index.html" class="text-white-outline">Home</a></li>
+                <li class="breadcrumb-item"><a href="Documentos.html" class="text-white-outline">Documentos</a></li>
+                <li class="breadcrumb-item text-white-outline active" aria-current="page">Visita Primos Italianos</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="container py-5 my-5">
+        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
+            <p class="fs-5 fw-medium fst-italic text-primary">Março de 2007</p>
+            <h1 class="display-6 mb-4">O Encontro das Origens</h1>
+            <p class="mb-5 text-muted" style="text-align: justify;">
+                Por ocasião da celebração das bodas de ouro de Pedro e Margarida Basso, tivemos a honra de receber nossos primos italianos, Irene e Fausto, que vieram conhecer o Brasil e estreitar os laços com a nossa família. Navegue pelas fotos deste encontro emocionante.
+            </p>
+        </div>
+
+        <div class="container py-5 my-5">
+        <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
+            <p class="fs-5 fw-medium fst-italic text-primary">Março de 2007</p>
+            <h1 class="display-6 mb-4">O Encontro das Origens</h1>
+            <p class="mb-5 text-muted" style="text-align: justify;">
+                Por ocasião da celebração das bodas de ouro de Pedro e Margarida Basso, tivemos a honra de receber nossos primos italianos, Irene e Fausto, que vieram conhecer o Brasil e estreitar os laços com a nossa família. Navegue pelas fotos deste encontro emocionante.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Uberlandia, storico incontro di Irene con Sergio e Celso', 'img/Fotos primos Italianos Irene e Fausto no Brasil/58 Uberlandia, storico incontro di Irene con Sergio e Celso.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/58 Uberlandia, storico incontro di Irene con Sergio e Celso.jpg" alt="Uberlandia, incontro" loading="lazy">
+                    <div class="gallery-caption">Uberlandia, storico incontro di Irene con Sergio e Celso</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Arriva anche Fausto', 'img/Fotos primos Italianos Irene e Fausto no Brasil/59 Arriva anche Fausto.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/59 Arriva anche Fausto.jpg" alt="Arriva anche Fausto" loading="lazy">
+                    <div class="gallery-caption">Arriva anche Fausto</div>
+                </div>
+            </div>
+
+           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Cilene, Juremar, Nildo, Celso, Clarice, Iracema...', 'img/Fotos primos Italianos Irene e Fausto no Brasil/61 Cilene,Juremar,Nildo,Celso,Clarice,Iracema,Margarida, Roque,Josè,Pedro,Estela,Marcia,Vera,Andr.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/61 Cilene,Juremar,Nildo,Celso,Clarice,Iracema,Margarida, Roque,Josè,Pedro,Estela,Marcia,Vera,Andr.jpg" alt="Familiares" loading="lazy">
+                    <div class="gallery-caption">Cilene, Juremar, Nildo...</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Julio, Fernanda, Lauane, Vanessa...', 'img/Fotos primos Italianos Irene e Fausto no Brasil/62 ......Julio,Fernanda,Lauane,Vanessa,Rafael,Laiz,Evelyn,Cintia,Lara,Taciane,Caroline,Lucas,Tulio.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/62 ......Julio,Fernanda,Lauane,Vanessa,Rafael,Laiz,Evelyn,Cintia,Lara,Taciane,Caroline,Lucas,Tulio.jpg" alt="Familiares" loading="lazy">
+                    <div class="gallery-caption">Julio, Fernanda, Lauane, Vanessa...</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene e la storia di Pedro e Margarida', 'img/Fotos primos Italianos Irene e Fausto no Brasil/63 Irene e la storia di Pedro e Margarida.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/63 Irene e la storia di Pedro e Margarida.jpg" alt="Irene e la storia di Pedro e Margarida" loading="lazy">
+                    <div class="gallery-caption">Irene e la storia di Pedro e Margarida</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene con tio Luiz', 'img/Fotos primos Italianos Irene e Fausto no Brasil/65 Irene con tio Luiz.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/65 Irene con tio Luiz.jpg" alt="Irene con tio Luiz" loading="lazy">
+                    <div class="gallery-caption">Irene con tio Luiz</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Sergio, Aghata, Irene, Luiz', 'img/Fotos primos Italianos Irene e Fausto no Brasil/66 Sergio,Aghata,Irene,Luiz.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/66 Sergio,Aghata,Irene,Luiz.jpg" alt="Sergio, Aghata, Irene, Luiz" loading="lazy">
+                    <div class="gallery-caption">Sergio, Aghata, Irene, Luiz</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene, Clarice, Nildo, Vanessa', 'img/Fotos primos Italianos Irene e Fausto no Brasil/67 Irene,Clarice,Nildo,Vanessa,..........jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/67 Irene,Clarice,Nildo,Vanessa,..........jpg" alt="Irene, Clarice, Nildo, Vanessa" loading="lazy">
+                    <div class="gallery-caption">Irene, Clarice, Nildo, Vanessa</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Fernanda, Taciane, Fausto, Evelyn, Irene, Cintia', 'img/Fotos primos Italianos Irene e Fausto no Brasil/68 Fernanda,Taciane,Fausto,Evelyn,Irene,Cintia.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/68 Fernanda,Taciane,Fausto,Evelyn,Irene,Cintia.jpg" alt="Familiares" loading="lazy">
+                    <div class="gallery-caption">Fernanda, Taciane, Fausto, Evelyn, Irene, Cintia</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Celso, Irene, Sergio, Josè', 'img/Fotos primos Italianos Irene e Fausto no Brasil/69 Celso,Irene,Sergio,Josè.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/69 Celso,Irene,Sergio,Josè.jpg" alt="Celso, Irene, Sergio, Josè" loading="lazy">
+                    <div class="gallery-caption">Celso, Irene, Sergio, Josè</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Sergio, Irene, Margarida, Fausto', 'img/Fotos primos Italianos Irene e Fausto no Brasil/72 Sergio,Irene,Margarida,Fausto.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/72 Sergio,Irene,Margarida,Fausto.jpg" alt="Sergio, Irene, Margarida, Fausto" loading="lazy">
+                    <div class="gallery-caption">Sergio, Irene, Margarida, Fausto</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene, Fausto', 'img/Fotos primos Italianos Irene e Fausto no Brasil/75 Irene, Fausto, ......., ......., .......jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/75 Irene, Fausto, ......., ......., .......jpg" alt="Irene, Fausto" loading="lazy">
+                    <div class="gallery-caption">Irene, Fausto</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Vera, Sergio, Fausto, Pedro, Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/76 Vera,Sergio,Fausto,Pedro,Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/76 Vera,Sergio,Fausto,Pedro,Irene.jpg" alt="Vera, Sergio, Fausto, Pedro, Irene" loading="lazy">
+                    <div class="gallery-caption">Vera, Sergio, Fausto, Pedro, Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Fausto, Irene, Estela, Andrè', 'img/Fotos primos Italianos Irene e Fausto no Brasil/77 Fausto,Irene,Estela,Andrè.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/77 Fausto,Irene,Estela,Andrè.jpg" alt="Fausto, Irene, Estela, Andrè" loading="lazy">
+                    <div class="gallery-caption">Fausto, Irene, Estela, Andrè</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Juremar, Fausto, Irene, Cilene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/78 Juremar,Fausto,Irene,Cilene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/78 Juremar,Fausto,Irene,Cilene.jpg" alt="Juremar, Fausto, Irene, Cilene" loading="lazy">
+                    <div class="gallery-caption">Juremar, Fausto, Irene, Cilene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene, suocera Josè, Marcia, Josè, Sergio, Aghata, Luiz', 'img/Fotos primos Italianos Irene e Fausto no Brasil/79 Irene, suocera Josè, Marcia,Josè,Sergio,Aghata,Luiz.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/79 Irene, suocera Josè, Marcia,Josè,Sergio,Aghata,Luiz.jpg" alt="Irene, suocera Josè, Marcia, Josè, Sergio, Aghata, Luiz" loading="lazy">
+                    <div class="gallery-caption">Irene, suocera Josè, Marcia, Josè, Sergio, Aghata, Luiz</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Sergio e Josè con churrasco', 'img/Fotos primos Italianos Irene e Fausto no Brasil/81 Sergio e Josè con churrasco.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/81 Sergio e Josè con churrasco.jpg" alt="Sergio e Josè con churrasco" loading="lazy">
+                    <div class="gallery-caption">Sergio e Josè con churrasco</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene con la canna (da zucchero)', 'img/Fotos primos Italianos Irene e Fausto no Brasil/86 Irene con la canna (da zucchero).jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/86 Irene con la canna (da zucchero).jpg" alt="Irene con la canna" loading="lazy">
+                    <div class="gallery-caption">Irene con la canna (da zucchero)</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Sergio e Irene con il casco (di banane)', 'img/Fotos primos Italianos Irene e Fausto no Brasil/87 Sergio e Irene con il casco (di banane).jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/87 Sergio e Irene con il casco (di banane).jpg" alt="Sergio e Irene con il casco (di banane)" loading="lazy">
+                    <div class="gallery-caption">Sergio e Irene con il casco (di banane)</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Josè sorveglia la sua proprietà', 'img/Fotos primos Italianos Irene e Fausto no Brasil/89 Josè sorveglia la sua proprietà.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/89 Josè sorveglia la sua proprietà.jpg" alt="Josè sorveglia la sua proprietà" loading="lazy">
+                    <div class="gallery-caption">Josè sorveglia la sua proprietà</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene, Thereza, Catarina Maria', 'img/Fotos primos Italianos Irene e Fausto no Brasil/92 Irene,Thereza,Catarina Maria.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/92 Irene,Thereza,Catarina Maria.jpg" alt="Irene, Thereza, Catarina Maria" loading="lazy">
+                    <div class="gallery-caption">Irene, Thereza, Catarina Maria</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Nuora (con figli) di Thereza, Sergio, Fausto, Irene, Thereza, Catarina Maria', 'img/Fotos primos Italianos Irene e Fausto no Brasil/93 nuora (con figli) di Thereza, Sergio,Fausto,Irene,Thereza, Catarina Maria.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/93 nuora (con figli) di Thereza, Sergio,Fausto,Irene,Thereza, Catarina Maria.jpg" alt="Nuora di Thereza" loading="lazy">
+                    <div class="gallery-caption">Nuora di Thereza, Sergio, Fausto, Irene...</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Marito Catarina Maria, Catarina M., Gabrieli...', 'img/Fotos primos Italianos Irene e Fausto no Brasil/94 Marito Catarina Maria,Catarina M.,Gabrieli,marito Ivone Maria,Thereza,Ivone Maria,...,Irene,J.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/94 Marito Catarina Maria,Catarina M.,Gabrieli,marito Ivone Maria,Thereza,Ivone Maria,...,Irene,J.jpg" alt="Familiares" loading="lazy">
+                    <div class="gallery-caption">Marito Catarina Maria, Catarina M., Gabrieli...</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Sergio, Irene, Thereza', 'img/Fotos primos Italianos Irene e Fausto no Brasil/95 Sergio,Irene,Thereza.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/95 Sergio,Irene,Thereza.jpg" alt="Sergio, Irene, Thereza" loading="lazy">
+                    <div class="gallery-caption">Sergio, Irene, Thereza</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene, Fausto, Gabrieli', 'img/Fotos primos Italianos Irene e Fausto no Brasil/97 Irene,......,Fausto,Gabrieli.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/97 Irene,......,Fausto,Gabrieli.jpg" alt="Irene, Fausto, Gabrieli" loading="lazy">
+                    <div class="gallery-caption">Irene, Fausto, Gabrieli</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene, Ivone Maria', 'img/Fotos primos Italianos Irene e Fausto no Brasil/98 .......,Irene,Ivone Maria.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/98 .......,Irene,Ivone Maria.jpg" alt="Irene, Ivone Maria" loading="lazy">
+                    <div class="gallery-caption">Irene, Ivone Maria</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Sergio, Irene, Thereza, Ivone Maria, marito di Ivone Maria', 'img/Fotos primos Italianos Irene e Fausto no Brasil/99 Sergio,Irene,Thereza,.......,Ivone Maria,.......,marito di Ivone Maria.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/99 Sergio,Irene,Thereza,.......,Ivone Maria,.......,marito di Ivone Maria.jpg" alt="Sergio, Irene, Thereza, Ivone Maria" loading="lazy">
+                    <div class="gallery-caption">Sergio, Irene, Thereza, Ivone Maria...</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Sergio, Irene, moglie di Classir, Classir, Ivone Maria, Thereza', 'img/Fotos primos Italianos Irene e Fausto no Brasil/100 Sergio,Irene,moglie di Classir,.......,Classir,.......,Ivone Maria,Thereza,........jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/100 Sergio,Irene,moglie di Classir,.......,Classir,.......,Ivone Maria,Thereza,........jpg" alt="Familiares" loading="lazy">
+                    <div class="gallery-caption">Sergio, Irene, moglie di Classir, Classir...</div>
+                </div>
+            </div>
+
+           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Foz Iguassu - Micheli, Irene e Fausto', 'img/Fotos primos Italianos Irene e Fausto no Brasil/101 Foz  Iguassu - Micheli, Irene e Fausto.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/101 Foz  Iguassu - Micheli, Irene e Fausto.jpg" alt="Foz Iguassu - Micheli, Irene e Fausto" loading="lazy">
+                    <div class="gallery-caption">Foz Iguassu - Micheli, Irene e Fausto</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Foz Iguassu - Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/102 Foz  Iguassu - Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/102 Foz  Iguassu - Irene.jpg" alt="Foz Iguassu - Irene" loading="lazy">
+                    <div class="gallery-caption">Foz Iguassu - Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Foz Iguassu - Fausto', 'img/Fotos primos Italianos Irene e Fausto no Brasil/103 Foz  Iguassu - Fausto.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/103 Foz  Iguassu - Fausto.jpg" alt="Foz Iguassu - Fausto" loading="lazy">
+                    <div class="gallery-caption">Foz Iguassu - Fausto</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Foz Iguassu - Garganta do Diabo', 'img/Fotos primos Italianos Irene e Fausto no Brasil/104-garganta.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/104-garganta.jpg" alt="Foz Iguassu - Garganta do Diabo" loading="lazy">
+                    <div class="gallery-caption">Foz Iguassu - Garganta do Diabo</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Agata, Sergio, Irene, Luiz', 'img/Fotos primos Italianos Irene e Fausto no Brasil/156 Agata, Sergio, Irene,Luiz.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/156 Agata, Sergio, Irene,Luiz.jpg" alt="Agata, Sergio, Irene, Luiz" loading="lazy">
+                    <div class="gallery-caption">Agata, Sergio, Irene, Luiz</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Telvino, Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/157 Telvino,Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/157 Telvino,Irene.jpg" alt="Telvino, Irene" loading="lazy">
+                    <div class="gallery-caption">Telvino, Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Giuseppina, Valdir, Irene, Leticia, Guilherme', 'img/Fotos primos Italianos Irene e Fausto no Brasil/158 Giuseppina,Valdir,Irene,Leticia,Guilherme.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/158 Giuseppina,Valdir,Irene,Leticia,Guilherme.jpg" alt="Giuseppina, Valdir, Irene, Leticia, Guilherme" loading="lazy">
+                    <div class="gallery-caption">Giuseppina, Valdir, Irene, Leticia, Guilherme</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene, Beatriz, Ines', 'img/Fotos primos Italianos Irene e Fausto no Brasil/159 Irene,Beatriz,Ines.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/159 Irene,Beatriz,Ines.jpg" alt="Irene, Beatriz, Ines" loading="lazy">
+                    <div class="gallery-caption">Irene, Beatriz, Ines</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Lurdes, Irene, Irene, Beatriz, Ivanira, Marciano, Ines', 'img/Fotos primos Italianos Irene e Fausto no Brasil/160 Lurdes,Irene,Irene,Beatriz,Ivanira,Marciano,Ines.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/160 Lurdes,Irene,Irene,Beatriz,Ivanira,Marciano,Ines.jpg" alt="Familiares" loading="lazy">
+                    <div class="gallery-caption">Lurdes, Irene, Beatriz, Ivanira, Marciano, Ines</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Luiz, Aghata, Lurdes, Irene, Beatriz, Marciano, figlio e moglie di Marciano, Ivanira', 'img/Fotos primos Italianos Irene e Fausto no Brasil/161 Luiz,Aghata,Lurdes,Irene,Beatriz,Marciano,Irene,figlio e moglie di Marciano,Ivanira.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/161 Luiz,Aghata,Lurdes,Irene,Beatriz,Marciano,Irene,figlio e moglie di Marciano,Ivanira.jpg" alt="Familiares" loading="lazy">
+                    <div class="gallery-caption">Luiz, Aghata, Lurdes, Irene, Beatriz, Marciano...</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Lurdes, Giuseppina, Leticia, Irene, Valdir, Ines', 'img/Fotos primos Italianos Irene e Fausto no Brasil/162 Lurdes,Giuseppina,Leticia,Irene,Valdir,Ines.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/162 Lurdes,Giuseppina,Leticia,Irene,Valdir,Ines.jpg" alt="Lurdes, Giuseppina, Leticia, Irene, Valdir, Ines" loading="lazy">
+                    <div class="gallery-caption">Lurdes, Giuseppina, Leticia, Irene, Valdir, Ines</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Andressa, Irene, Fausto, marito di Ivanira, Ivanira, Anderson', 'img/Fotos primos Italianos Irene e Fausto no Brasil/163 Andressa,Irene,Fausto,marito di Ivanira,Ivanira,Anderson.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/163 Andressa,Irene,Fausto,marito di Ivanira,Ivanira,Anderson.jpg" alt="Andressa, Irene, Fausto, marito di Ivanira, Ivanira, Anderson" loading="lazy">
+                    <div class="gallery-caption">Andressa, Irene, Fausto, marito di Ivanira...</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Irene, Ines', 'img/Fotos primos Italianos Irene e Fausto no Brasil/164 Irene,Ines.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/164 Irene,Ines.jpg" alt="Irene, Ines" loading="lazy">
+                    <div class="gallery-caption">Irene, Ines</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Fabricio, Irene, Luana', 'img/Fotos primos Italianos Irene e Fausto no Brasil/165 Fabricio,Irene,Luana.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/165 Fabricio,Irene,Luana.jpg" alt="Fabricio, Irene, Luana" loading="lazy">
+                    <div class="gallery-caption">Fabricio, Irene, Luana</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Tiago, Irene, Lurdes, Andrè', 'img/Fotos primos Italianos Irene e Fausto no Brasil/166 Tiago,Irene,Lurdes,Andrè.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/166 Tiago,Irene,Lurdes,Andrè.jpg" alt="Tiago, Irene, Lurdes, Andrè" loading="lazy">
+                    <div class="gallery-caption">Tiago, Irene, Lurdes, Andrè</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Luiz, Telvino, Irene, Ines, Sergio', 'img/Fotos primos Italianos Irene e Fausto no Brasil/167 Luiz,Telvino,Irene,Ines,Sergio.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/167 Luiz,Telvino,Irene,Ines,Sergio.jpg" alt="Luiz, Telvino, Irene, Ines, Sergio" loading="lazy">
+                    <div class="gallery-caption">Luiz, Telvino, Irene, Ines, Sergio</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Luana, marito di Irene, Irene, Fausto, Irene, Fabricio', 'img/Fotos primos Italianos Irene e Fausto no Brasil/168 Luana,marito di Irene,Irene,Fausto,Irene,Fabricio,.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/168 Luana,marito di Irene,Irene,Fausto,Irene,Fabricio,.jpg" alt="Luana, marito di Irene..." loading="lazy">
+                    <div class="gallery-caption">Luana, marito di Irene, Irene, Fausto...</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Telvino, Fausto, Ines, Luiz', 'img/Fotos primos Italianos Irene e Fausto no Brasil/170 Telvino,Fausto,Ines,Luiz.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/170 Telvino,Fausto,Ines,Luiz.jpg" alt="Telvino, Fausto, Ines, Luiz" loading="lazy">
+                    <div class="gallery-caption">Telvino, Fausto, Ines, Luiz</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Sergio, Telvino, Luiz, Fausto, Ines', 'img/Fotos primos Italianos Irene e Fausto no Brasil/172 Sergio,Telvino,Luiz,Fausto,Ines.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/172 Sergio,Telvino,Luiz,Fausto,Ines.jpg" alt="Sergio, Telvino, Luiz, Fausto, Ines" loading="lazy">
+                    <div class="gallery-caption">Sergio, Telvino, Luiz, Fausto, Ines</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Venanzio Aires, Cimarrao', 'img/Fotos primos Italianos Irene e Fausto no Brasil/176 Venanzio Aires, Cimarrao .jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/176 Venanzio Aires, Cimarrao .jpg" alt="Venanzio Aires, Cimarrao" loading="lazy">
+                    <div class="gallery-caption">Venanzio Aires, Cimarrao</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Linha Bonita - tomba di Catarino', 'img/Fotos primos Italianos Irene e Fausto no Brasil/177 Linha Bonita - tomba di Catarino.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/177 Linha Bonita - tomba di Catarino.jpg" alt="Linha Bonita - tomba di Catarino" loading="lazy">
+                    <div class="gallery-caption">Linha Bonita - tomba di Catarino</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Linha Bonita - tomba di Maria', 'img/Fotos primos Italianos Irene e Fausto no Brasil/178 Linha Bonita - tomba di Maria.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/178 Linha Bonita - tomba di Maria.jpg" alt="Linha Bonita - tomba di Maria" loading="lazy">
+                    <div class="gallery-caption">Linha Bonita - tomba di Maria</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Sergio e marito di Ivanira con churrasco', 'img/Fotos primos Italianos Irene e Fausto no Brasil/179 Sergio e marito di Ivanira con churrasco.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/179 Sergio e marito di Ivanira con churrasco.jpg" alt="Sergio e marito di Ivanira con churrasco" loading="lazy">
+                    <div class="gallery-caption">Sergio e marito di Ivanira con churrasco</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Ana, Lurdes Catarina, Irene, Elvira Maria, Vicente, Valdir', 'img/Fotos primos Italianos Irene e Fausto no Brasil/180 Ana, Lurdes Catarina,Irene,Elvira Maria (moglie di Catarino), Vicente,Valdir.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/180 Ana, Lurdes Catarina,Irene,Elvira Maria (moglie di Catarino), Vicente,Valdir.jpg" alt="Ana, Lurdes Catarina, Irene, Elvira Maria, Vicente, Valdir" loading="lazy">
+                    <div class="gallery-caption">Ana, Lurdes Catarina, Irene, Elvira Maria...</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Lurdes Catarina, Elvira Maria, Valdir', 'img/Fotos primos Italianos Irene e Fausto no Brasil/181 Lurdes Catarina,Elvira Maria,Valdir,.......,........jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/181 Lurdes Catarina,Elvira Maria,Valdir,.......,........jpg" alt="Lurdes Catarina, Elvira Maria, Valdir" loading="lazy">
+                    <div class="gallery-caption">Lurdes Catarina, Elvira Maria, Valdir</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Lurdes Catarina, Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/182 Lurdes Catarina,Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/182 Lurdes Catarina,Irene.jpg" alt="Lurdes Catarina, Irene" loading="lazy">
+                    <div class="gallery-caption">Lurdes Catarina, Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Fausto, Jandir, Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/183 Fausto,Jandir,Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/183 Fausto,Jandir,Irene.jpg" alt="Fausto, Jandir, Irene" loading="lazy">
+                    <div class="gallery-caption">Fausto, Jandir, Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Jandir, Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/184 Jandir,Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/184 Jandir,Irene.jpg" alt="Jandir, Irene" loading="lazy">
+                    <div class="gallery-caption">Jandir, Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Ana, Irene, Aghata, Luiz', 'img/Fotos primos Italianos Irene e Fausto no Brasil/185 Ana,  Irene,Aghata,Luiz.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/185 Ana,  Irene,Aghata,Luiz.jpg" alt="Ana, Irene, Aghata, Luiz" loading="lazy">
+                    <div class="gallery-caption">Ana, Irene, Aghata, Luiz</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('José, Ana, Irene, Aghata, Luiz', 'img/Fotos primos Italianos Irene e Fausto no Brasil/186 José, Ana, Irene,Aghata,Luiz.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/186 José, Ana, Irene,Aghata,Luiz.jpg" alt="José, Ana, Irene, Aghata, Luiz" loading="lazy">
+                    <div class="gallery-caption">José, Ana, Irene, Aghata, Luiz</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Chiesa di Relvado', 'img/Fotos primos Italianos Irene e Fausto no Brasil/188 Chiesa di Relvado.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/188 Chiesa di Relvado.jpg" alt="Chiesa di Relvado" loading="lazy">
+                    <div class="gallery-caption">Chiesa di Relvado</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Salvaçao, Irene sulla terra originaria dei nonni Basso', 'img/Fotos primos Italianos Irene e Fausto no Brasil/191 Salvaçao, Irene sulla terra originaria dei nonni Basso.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/191 Salvaçao, Irene sulla terra originaria dei nonni Basso.jpg" alt="Salvaçao, Irene sulla terra originaria dei nonni Basso" loading="lazy">
+                    <div class="gallery-caption">Salvaçao, Irene sulla terra originaria dei nonni Basso</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Salvaçao, Irene sulla ex casa dei nonni Basso', 'img/Fotos primos Italianos Irene e Fausto no Brasil/192 Salvaçao, Irene sulla ex casa dei nonni Basso.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/192 Salvaçao, Irene sulla ex casa dei nonni Basso.jpg" alt="Salvaçao, Irene sulla ex casa dei nonni Basso" loading="lazy">
+                    <div class="gallery-caption">Salvaçao, Irene sulla ex casa dei nonni Basso</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Salvaçao, Irene...prepara il pane nel forno dei nonni Basso', 'img/Fotos primos Italianos Irene e Fausto no Brasil/194 Salvaçao,Irene...prepara il pane nel forno dei nonni Basso.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/194 Salvaçao,Irene...prepara il pane nel forno dei nonni Basso.jpg" alt="Salvaçao, Irene...prepara il pane nel forno dei nonni Basso" loading="lazy">
+                    <div class="gallery-caption">Salvaçao, Irene...prepara il pane nel forno dei nonni Basso</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Salvaçao, Sergio e Irene davanti al centro sociale', 'img/Fotos primos Italianos Irene e Fausto no Brasil/195 Salvaçao, Sergio e Irene davanti al centro sociale.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/195 Salvaçao, Sergio e Irene davanti al centro sociale.jpg" alt="Salvaçao, Sergio e Irene davanti al centro sociale" loading="lazy">
+                    <div class="gallery-caption">Salvaçao, Sergio e Irene davanti al centro sociale</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Salvaçao, Sergio e Irene davanti alla chiesa', 'img/Fotos primos Italianos Irene e Fausto no Brasil/196 Salvaçao, Sergio e Irene davanti alla chiesa.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/196 Salvaçao, Sergio e Irene davanti alla chiesa.jpg" alt="Salvaçao, Sergio e Irene davanti alla chiesa" loading="lazy">
+                    <div class="gallery-caption">Salvaçao, Sergio e Irene davanti alla chiesa</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Salvaçao, Jandir e Sergio all interno della chiesa', 'img/Fotos primos Italianos Irene e Fausto no Brasil/197 Salvaçao, Jandir e Sergio all\'interno della chiesa.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/197 Salvaçao, Jandir e Sergio all'interno della chiesa.jpg" alt="Salvaçao, Jandir e Sergio all interno della chiesa" loading="lazy">
+                    <div class="gallery-caption">Salvaçao, Jandir e Sergio all'interno della chiesa</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('L. Salvaçao, Irene sulla tomba', 'img/Fotos primos Italianos Irene e Fausto no Brasil/199 L.  Salvaçao, Irene sulla tomba dei nonna Maria Basso (1).jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/199 L.  Salvaçao, Irene sulla tomba dei nonna Maria Basso (1).jpg" alt="L. Salvaçao" loading="lazy">
+                    <div class="gallery-caption">L. Salvaçao, Irene sulla tomba dei nonna Maria Basso (1)</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('L. Salvaçao, Irene sulla tomba (2)', 'img/Fotos primos Italianos Irene e Fausto no Brasil/200 L.  Salvaçao, Irene sulla tomba dei nonni Basso (2).jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/200 L.  Salvaçao, Irene sulla tomba dei nonni Basso (2).jpg" alt="L. Salvaçao" loading="lazy">
+                    <div class="gallery-caption">L. Salvaçao, Irene sulla tomba dei nonni Basso (2)</div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Encantado, murales imigranti', 'img/Fotos primos Italianos Irene e Fausto no Brasil/202 Encantado, murales imigranti.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/202 Encantado, murales imigranti.jpg" alt="Encantado, murales imigranti" loading="lazy">
+                    <div class="gallery-caption">Encantado, murales imigranti</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Encantado, Cattedrale', 'img/Fotos primos Italianos Irene e Fausto no Brasil/203 Encantado, Cattedrale.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/203 Encantado, Cattedrale.jpg" alt="Encantado, Cattedrale" loading="lazy">
+                    <div class="gallery-caption">Encantado, Cattedrale</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Garibaldi, Fausto', 'img/Fotos primos Italianos Irene e Fausto no Brasil/204 Garibaldi, Fausto.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/204 Garibaldi, Fausto.jpg" alt="Garibaldi, Fausto" loading="lazy">
+                    <div class="gallery-caption">Garibaldi, Fausto</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Garibaldi, Irene davanti alla statua dell eroe dei due mondi', 'img/Fotos primos Italianos Irene e Fausto no Brasil/205 Garibaldi, Irene davanti alla statua dell\'eroe dei due mondi.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/205 Garibaldi, Irene davanti alla statua dell'eroe dei due mondi.jpg" alt="Garibaldi, Irene davanti alla statua" loading="lazy">
+                    <div class="gallery-caption">Garibaldi, Irene davanti alla statua dell'eroe dei due mondi</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Tenuta vinicola Miolo, Sergio e Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/207 ........, Tenuta vinicola Miolo, Sergio e Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/207 ........, Tenuta vinicola Miolo, Sergio e Irene.jpg" alt="Tenuta vinicola Miolo, Sergio e Irene" loading="lazy">
+                    <div class="gallery-caption">Tenuta vinicola Miolo, Sergio e Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Bento Gonçalves', 'img/Fotos primos Italianos Irene e Fausto no Brasil/209 Bento Gonçalves.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/209 Bento Gonçalves.jpg" alt="Bento Gonçalves" loading="lazy">
+                    <div class="gallery-caption">Bento Gonçalves</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Caxia do Sul, Casa de Pedra', 'img/Fotos primos Italianos Irene e Fausto no Brasil/213 Caxia do Sul, Casa de Pedra.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/213 Caxia do Sul, Casa de Pedra.jpg" alt="Caxia do Sul, Casa de Pedra" loading="lazy">
+                    <div class="gallery-caption">Caxia do Sul, Casa de Pedra</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Gramado, Fausto e Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/224 Gramado, Fausto e Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/224 Gramado, Fausto e Irene.jpg" alt="Gramado, Fausto e Irene" loading="lazy">
+                    <div class="gallery-caption">Gramado, Fausto e Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Canela, Sergio, Fausto e Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/226 Canela, Sergio, Fausto e Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/226 Canela, Sergio, Fausto e Irene.jpg" alt="Canela, Sergio, Fausto e Irene" loading="lazy">
+                    <div class="gallery-caption">Canela, Sergio, Fausto e Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Gramado', 'img/Fotos primos Italianos Irene e Fausto no Brasil/229 Gramado.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/229 Gramado.jpg" alt="Gramado" loading="lazy">
+                    <div class="gallery-caption">Gramado</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Taquara, Sergio e Lucas davanti alla loro casa, con Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/230 Taquara, Sergio e Lucas davanti alla loro casa, con Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/230 Taquara, Sergio e Lucas davanti alla loro casa, con Irene.jpg" alt="Taquara, Sergio e Lucas davanti alla loro casa, con Irene" loading="lazy">
+                    <div class="gallery-caption">Taquara, Sergio e Lucas davanti alla loro casa, con Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Taquara, Lucas davanti alla casa di Sergio e Vera, con Fausto e Irene', 'img/Fotos primos Italianos Irene e Fausto no Brasil/231 Taquara, Lucas davanti alla casa di Sergio e Vera, con Fausto e Irene.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/231 Taquara, Lucas davanti alla casa di Sergio e Vera, con Fausto e Irene.jpg" alt="Taquara, Lucas davanti alla casa di Sergio e Vera, con Fausto e Irene" loading="lazy">
+                    <div class="gallery-caption">Taquara, Lucas davanti alla casa di Sergio e Vera, con Fausto e Irene</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Tramandaì, Irene e Fausto', 'img/Fotos primos Italianos Irene e Fausto no Brasil/233 Tramandaì, Irene e Fausto.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/233 Tramandaì, Irene e Fausto.jpg" alt="Tramandaì, Irene e Fausto" loading="lazy">
+                    <div class="gallery-caption">Tramandaì, Irene e Fausto</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Porto Alegre, Lucas e Fausto davanti allo Shopping del Internacional', 'img/Fotos primos Italianos Irene e Fausto no Brasil/235 Porto Alegre, Lucas e Fausto davanti allo Shopping del\'Internacional.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/235 Porto Alegre, Lucas e Fausto davanti allo Shopping del'Internacional.jpg" alt="Porto Alegre, Lucas e Fausto davanti allo Shopping" loading="lazy">
+                    <div class="gallery-caption">Porto Alegre, Lucas e Fausto davanti allo Shopping del'Internacional</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Porto Alegre, Sergio, Irene e Lucas nello stadio del Internacional', 'img/Fotos primos Italianos Irene e Fausto no Brasil/236 Porto Alegre, Sergio,Irene e Lucas nello stadio dell\'Internacional.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/236 Porto Alegre, Sergio,Irene e Lucas nello stadio dell'Internacional.jpg" alt="Porto Alegre, Sergio, Irene e Lucas nello stadio" loading="lazy">
+                    <div class="gallery-caption">Porto Alegre, Sergio, Irene e Lucas nello stadio dell'Internacional</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Porto Alegre, veduta panoramica', 'img/Fotos primos Italianos Irene e Fausto no Brasil/239 Porto Alegre, veduta panoramica.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/239 Porto Alegre, veduta panoramica.jpg" alt="Porto Alegre, veduta panoramica" loading="lazy">
+                    <div class="gallery-caption">Porto Alegre, veduta panoramica</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Porto Alegre, Luiz, Irene, Inês e Marco a sinistra e Lucas', 'img/Fotos primos Italianos Irene e Fausto no Brasil/240 Porto Alegre,Luiz, Irene, Inês e Marco a sinistra e Lucas.jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/240 Porto Alegre,Luiz, Irene, Inês e Marco a sinistra e Lucas.jpg" alt="Porto Alegre, Luiz, Irene, Inês e Marco a sinistra e Lucas" loading="lazy">
+                    <div class="gallery-caption">Porto Alegre, Luiz, Irene, Inês e Marco a sinistra e Lucas</div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="gallery-item" onclick="openModal('Porto Alegre, Nedio, sua moglie, Vittoria, Irene, Luiz e Inês', 'img/Fotos primos Italianos Irene e Fausto no Brasil/241 Porto Alegre, Nedio, sua moglie, Vittoria,Irene, Luiz e Inês..jpg')">
+                    <img src="img/Fotos primos Italianos Irene e Fausto no Brasil/241 Porto Alegre, Nedio, sua moglie, Vittoria,Irene, Luiz e Inês..jpg" alt="Porto Alegre, Nedio, sua moglie, Vittoria, Irene, Luiz e Inês" loading="lazy">
+                    <div class="gallery-caption">Porto Alegre, Nedio, sua moglie, Vittoria, Irene, Luiz e Inês</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-primary mb-4">Onde Estamos</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3 text-white"></i><span class="text-white">Porto Alegre, RS - Brasil</span></p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary me-3 text-white"></i><span class="text-white">lzb1093@outlook.com</span></p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary me-3 text-white"></i><span class="text-white">sergiobasso1924@gmail.com</span></p>
+                <div class="d-flex pt-3">
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.instagram.com/lucas.zanettebasso/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/lucas.zanettebasso" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.linkedin.com/in/lucas-zanette-basso-756395b9/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-primary mb-4">Colaboradores</h4>
+                <a class="btn btn-link" href="https://consportoalegre.esteri.it/pt/" target="_blank">Consulado Italiano</a>
+                <a class="btn btn-link" href="https://www.angelozanatta.com.br/" target="_blank">Família Zanatta</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-primary mb-4">Links Parceiros</h4>
+                <a class="btn btn-link" href="https://www.somospet2pet.com.br/dogminas" target="_blank">Dog Minas</a>
+                <a class="btn btn-link" href="https://www.centrooestepet.com.br/" target="_blank">Centro Oeste Pet</a>
+                <a class="btn btn-link" href="https://www.instagram.com/agro_sao_jorge_udia/" target="_blank">Agro São Jorge</a>
+                <a class="btn btn-link" href="https://www.instagram.com/pet2pet_?igsh=MWQ2dG0ycWIwaDJrcA%3D%3D" target="_blank">Pet 2 Pet</a>
+                <a class="btn btn-link" href="https://www.instagram.com/vetclinica_udi/" target="_blank">VetClínica</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="fw-medium" href="#">Família Basso</a>, Todos os direitos reservados.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                Desenvolvido por <a class="fw-medium" href="https://htmlcodex.com">Lucas Zanette Basso</a>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        function openModal(altText, imgUrl) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('expandedImage');
+            const caption = document.getElementById('imageCaption');
+
+            modal.style.display = 'block';
+            modal.style.backgroundColor = 'rgba(0,0,0,0.9)'; // Fundo bem escuro
+            modal.classList.add('show');
+            modalImage.src = imgUrl;
+            modalImage.alt = altText;
+            caption.innerText = altText;
+        }
+
+        // Fechar ao clicar no X ou fora da imagem
+        document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            modal.classList.remove('show');
+        }
+    </script>
+</body>
+</html>
